@@ -446,6 +446,7 @@
           }
         };
         _0x530501();
+        // Preserve the original bind result so Bloxd continues loading normally.
         return _0x46ac90.apply(this, arguments);
       }
       return _0x46ac90.apply(this, arguments);
@@ -501,7 +502,7 @@
       _0xaa4c31.ready = true;
       _0x17466b.injected = true;
       if (_0x4f9147) {
-        _0x4f9147.notify("Ready (RightShift to toggle menu)", "#FF1493");
+        _0x4f9147.notify("Ready (RightShift to toggle menu)", "#00FFFFFF");
       }
       _0x15494c();
       return true;
@@ -569,7 +570,7 @@
     searchInput: null,
     activeCategory: "Combat",
     categories: ["Combat", "Movement", "Visuals", "World", "HUD"],
-    themeColor: "rgb(255, 20, 147)",
+    themeColor: "rgb(255, 105, 180)",
     applyTheme: function (_0x3cc483) {
       const _0x17de33 = Array.isArray(_0x3cc483) ? _0x3cc483.join(", ") : _0x3cc483;
       if (!this.shadowRoot) {
@@ -590,11 +591,11 @@
       this.createHUD();
       this.setupEvents();
       this.render();
-      this.applyTheme([255, 20, 147]);
+      this.applyTheme([255, 105, 180]);
     },
     injectStyles() {
       const _0x641fd3 = document.createElement("style");
-      _0x641fd3.textContent = "\n                :host {\n                    --theme-rgb: 255, 20, 147;\n                    --primary: rgb(var(--theme-rgb));\n                    --bg: #202022;\n                    --bg-2: #252527;\n                    --bg-3: #2b2b2e;\n                    --line: rgba(255,255,255,.075);\n                    --text: #f4f4f4;\n                    --muted: #929298;\n                    --switch: #e8e8ea;\n                    --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n                    position: relative;\n                }\n                * { box-sizing: border-box; }\n                .rex-overlay {\n                    position: fixed; inset: 0; z-index: 9998;\n                    background: rgba(0,0,0,.30);\n                    backdrop-filter: none;\n                    opacity: 0; pointer-events: none;\n                    transition: opacity .22s ease;\n                }\n                .rex-overlay.visible { opacity: 1; pointer-events: auto; }\n                .rex-shell {\n                    position: fixed;\n                    left: 50%; top: 50%;\n                    width: min(930px, calc(100vw - 56px));\n                    height: min(555px, calc(100vh - 56px));\n                    transform: translate(-50%, -47%) scale(.985);\n                    opacity: 0; pointer-events: none;\n                    z-index: 2147483646;\n                    display: grid;\n                    grid-template-columns: 228px minmax(0,1fr);\n                    overflow: auto;\n                    color: var(--text);\n                    font-family: var(--font);\n                    background: var(--bg);\n                    border: 1px solid rgba(255,255,255,.08);\n                    border-radius: 12px;\n                    box-shadow: 0 24px 80px rgba(0,0,0,.68), 0 0 0 1px rgba(0,0,0,.35);\n                    transition: opacity .22s ease, transform .22s cubic-bezier(.2,.8,.2,1);\n                    user-select: none;\n                }\n                .rex-shell.visible { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }\n                .rex-sidebar {\n                    min-width: 0; display:flex; flex-direction:column;\n                    padding: 18px 12px 14px;\n                    background: #1d1d1f;\n                    border-right: 1px solid var(--line);\n                }\n                .rex-brand { display:flex; align-items:center; gap:11px; padding: 2px 8px 17px; border-bottom:1px solid var(--line); }\n                .rex-brand-icon { width:31px;height:31px;border-radius:7px;display:grid;place-items:center;background:var(--primary);color:#fff;font-size:18px;font-weight:800;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06); }\n                .rex-brand-title { font-size:18px;font-weight:750;line-height:1;letter-spacing:-.4px; }\n                .rex-brand-sub { margin-top:4px;font-size:9px;color:#747478; }\n                .rex-section-label { margin:18px 8px 8px;font-size:9px;color:#6f6f74;text-transform:uppercase;letter-spacing:.7px;font-weight:700; }\n                .rex-nav { display:flex;flex-direction:column;gap:4px; }\n                .rex-nav-btn { height:38px;display:flex;align-items:center;gap:10px;padding:0 10px;border-radius:8px;color:#8f8f94;font-size:12px;font-weight:600;cursor:pointer;transition:.16s ease;background:transparent;border:1px solid transparent; }\n                .rex-nav-btn:hover { color:#ddd;background:#28282b; }\n                .rex-nav-btn.active { color:#fff;background:#444448;border-color:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.02); }\n                .rex-nav-icon { width:20px;text-align:center;font-size:15px;opacity:.9; }\n                .rex-nav-count { margin-left:auto;min-width:22px;text-align:center;padding:2px 5px;border-radius:6px;background:#303034;color:#77777d;font-size:9px; }\n                .rex-nav-btn.active .rex-nav-count { color:#c8c8cc;background:#505054; }\n                .rex-sidebar-bottom { margin-top:auto;padding:11px 8px 0;border-top:1px solid var(--line); }\n                .rex-status { display:flex;align-items:center;gap:8px;color:#77777c;font-size:10px; }\n                .rex-dot { width:7px;height:7px;border-radius:50%;background:#5e5e63;box-shadow:0 0 8px rgba(255,255,255,.1); }\n                .rex-dot.ready { background:#79d69c;box-shadow:0 0 8px rgba(121,214,156,.35); }\n                .rex-version { margin-top:6px;color:#5f5f64;font-size:9px; }\n                .rex-main { min-width:0;display:flex;flex-direction:column;background:#242426; }\n                .rex-topbar { height:70px;display:flex;align-items:center;gap:18px;padding:0 20px;border-bottom:1px solid var(--line); }\n                .rex-heading { min-width:0; }\n                .rex-heading h2 { margin:0;font-size:19px;line-height:1.1;letter-spacing:-.3px;font-weight:760; }\n                .rex-heading p { margin:6px 0 0;color:#77777d;font-size:10px; }\n                .rex-search { margin-left:auto;width:220px;height:34px;display:flex;align-items:center;gap:8px;padding:0 11px;border:1px solid rgba(255,255,255,.09);border-radius:7px;background:#1d1d1f;color:#88888d; }\n                .rex-search span { font-size:13px; }\n                .rex-search input { width:100%;border:0;outline:0;background:transparent;color:#ddd;font:10px var(--font); }\n                .rex-search input::placeholder { color:#6e6e73; }\n                .rex-content { flex:1;min-height:0;overflow:auto;padding:12px 12px 18px; }\n                .rex-content::-webkit-scrollbar { width:7px; }\n                .rex-content::-webkit-scrollbar-thumb { background:#39393c;border-radius:8px; }\n                .rex-module-card { background:#29292c;border:1px solid rgba(255,255,255,.055);border-radius:9px;margin-bottom:7px;overflow:hidden;transition:background .14s ease,border-color .14s ease,transform .14s ease; }\n                .rex-module-card:hover { background:#303033;border-color:rgba(255,255,255,.09); }\n                .rex-module-row { min-height:62px;display:flex;align-items:center;padding:0 15px;gap:12px;cursor:pointer; }\n                .rex-module-name { min-width:0;flex:1; }\n                .rex-module-title { font-size:12px;font-weight:700;color:#e9e9eb; }\n                .rex-module-desc { margin-top:4px;color:#77777d;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }\n                .rex-module-gear { width:22px;height:22px;display:grid;place-items:center;color:#77777c;font-size:13px;cursor:pointer;transition:.15s; }\n                .rex-module-gear:hover { color:#fff;transform:rotate(20deg); }\n                .rex-switch { position:relative;width:43px;height:22px;flex:0 0 auto;border-radius:99px;background:#151517;border:1px solid rgba(255,255,255,.05);cursor:pointer;transition:.16s; }\n                .rex-switch::after { content:\"\";position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:#e9e9eb;transition:.16s;box-shadow:0 1px 4px rgba(0,0,0,.4); }\n                .rex-switch.on { background:var(--primary); }\n                .rex-switch.on::after { left:24px; }\n                .rex-module-card.active { background:rgba(var(--theme-rgb),.16);border-color:rgba(var(--theme-rgb),.42); }\n                .rex-settings { display:none;padding:0 15px 12px;border-top:1px solid var(--line);background:#252527; }\n                .rex-settings.open { display:block; }\n                .rex-setting { padding-top:11px; }\n                .rex-setting-line { display:flex;justify-content:space-between;align-items:center;gap:12px;color:#a0a0a5;font-size:9px;font-weight:650; }\n                .rex-setting-value { color:#dedee1;min-width:34px;text-align:right; }\n                .rex-range { width:100%;height:3px;margin:10px 0 1px;appearance:none;background:#444448;border-radius:4px;outline:0; }\n                .rex-range::-webkit-slider-thumb { appearance:none;width:12px;height:12px;border-radius:50%;background:#f2f2f2;box-shadow:0 1px 5px rgba(0,0,0,.45);cursor:pointer; }\n                .rex-check-row { display:flex;justify-content:space-between;align-items:center; }\n                .rex-mini-switch { position:relative;width:34px;height:18px;border-radius:99px;background:#161618;cursor:pointer; }\n                .rex-mini-switch::after { content:\"\";position:absolute;top:3px;left:3px;width:12px;height:12px;border-radius:50%;background:#ddd;transition:.15s; }\n                .rex-mini-switch.on::after { left:19px; }\n                .rex-select { background:#1b1b1d;color:#ddd;border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:5px 8px;outline:0;font:9px var(--font); }\n                .rex-empty { padding:28px 12px;text-align:center;color:#6f6f74;font-size:11px; }\n                .rex-footer { height:40px;display:flex;align-items:center;padding:0 18px;border-top:1px solid var(--line);color:#68686e;font-size:9px; }\n                .rex-footer strong { color:#9b9ba0; }\n                .rex-watermark { position:fixed;top:6px;left:15px;color:var(--primary);font:700 17px var(--font);line-height:1.05;text-shadow:0 2px 10px #000;z-index:9997;display:none;pointer-events:none; }\n                .rex-watermark-version { display:block;font-size:10px;letter-spacing:1.5px;margin-bottom:2px;opacity:.9; }\n                .rex-watermark-name { display:block;font-size:17px;line-height:1.05; }\n                .rex-array { position:fixed;top:15px;right:15px;display:none;flex-direction:column;align-items:flex-end;gap:4px;z-index:9997;pointer-events:none;font:700 10px var(--font); }\n                .rex-array-item { padding:4px 8px;background:rgba(20,20,22,.72);border-right:2px solid var(--primary);border-radius:4px 0 0 4px;color:#fff;backdrop-filter:blur(5px); }\n                .rex-hud-info { position:fixed;top:15px;left:50%;transform:translateX(-50%);display:none;gap:14px;padding:5px 12px;border:1px solid rgba(255,255,255,.08);border-radius:7px;background:rgba(20,20,22,.72);color:#fff;font:700 10px var(--font);z-index:9997; }\n                .rex-keystrokes { position:fixed;top:100px;left:15px;display:none;flex-direction:column;gap:3px;z-index:9997;font-family:var(--font); }\n                .rex-key-row { display:flex;gap:3px;justify-content:center; }\n                .rex-key { width:27px;height:27px;display:grid;place-items:center;background:rgba(20,20,22,.72);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:#eee;font-size:10px;font-weight:750; }\n                .rex-key.active { background:rgba(var(--theme-rgb),.35);border-color:var(--primary);transform:scale(.96); }\n                .rex-key.mouse { width:42px;display:flex;flex-direction:column;gap:1px; }\n                .rex-cps { font-size:7px;color:#999; }\n                .rex-menu-button { position:fixed;top:10px;left:50%;transform:translateX(-50%);width:42px;height:42px;display:grid;place-items:center;background:rgba(24,24,27,.96);border:1px solid rgba(255,255,255,.16);border-radius:8px;color:#eee;cursor:pointer;z-index:2147483647;font:700 21px var(--font);pointer-events:auto !important;user-select:none;touch-action:manipulation;box-shadow:0 5px 22px rgba(0,0,0,.5);transition:transform .15s ease,background .15s ease,border-color .15s ease; }\n                .rex-menu-button:hover { background:#303034;border-color:var(--primary);transform:translateX(-50%) scale(1.05); }\n                .rex-menu-button.open { background:var(--primary);border-color:var(--primary);color:#fff; }\n                .rex-notify { position:fixed;right:20px;bottom:24px;display:flex;flex-direction:column;align-items:flex-end;gap:8px;z-index:10001;pointer-events:none;font-family:var(--font); }\n                .rex-toast { min-width:190px;padding:9px 13px;border-radius:6px;background:#242426;border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--primary);box-shadow:0 10px 30px rgba(0,0,0,.45);color:#fff;font-size:10px;opacity:0;transform:translateX(30px);transition:.25s; }\n                .rex-toast.show { opacity:1;transform:none; }\n                @media(max-width:760px){ .rex-shell{grid-template-columns:170px minmax(0,1fr);width:calc(100vw - 20px);height:calc(100vh - 20px)} .rex-search{width:150px}.rex-brand-title{font-size:15px}.rex-nav-btn{font-size:10px} }\n                @media(max-width:560px){ .rex-shell{grid-template-columns:1fr}.rex-sidebar{display:none}.rex-topbar{padding:0 12px}.rex-heading h2{font-size:16px}.rex-search{width:120px}.rex-module-desc{display:none} }\n                .rex-shell { width:min(980px,calc(100vw - 34px)); height:min(590px,calc(100vh - 34px)); grid-template-columns:248px minmax(0,1fr); background:linear-gradient(135deg,#211522 0%,#151219 58%,#241321 100%); border:1px solid rgba(255,20,147,.38); border-radius:20px; box-shadow:0 28px 90px rgba(0,0,0,.78),0 0 40px rgba(255,20,147,.12); }\n                .rex-sidebar { padding:22px 14px 16px; background:linear-gradient(180deg,#291629 0%,#1b121d 100%); border-right:1px solid rgba(255,20,147,.18); }\n                .rex-brand { padding:0 9px 20px; border-bottom:1px solid rgba(255,20,147,.18); }\n                .rex-brand-icon { background:linear-gradient(135deg,#ff1493,#ff1493); border-radius:11px; box-shadow:0 0 18px rgba(255,20,147,.35); }\n                .rex-brand-title { font-size:19px; letter-spacing:-.6px; }\n                .rex-brand-sub { color:#ff1493; text-transform:uppercase; letter-spacing:1.5px; }\n                .rex-nav-btn { border-radius:11px; }\n                .rex-nav-btn:hover { color:#fff; background:rgba(255,20,147,.10); }\n                .rex-nav-btn.active { color:#fff; background:linear-gradient(90deg,rgba(255,20,147,.30),rgba(255,20,147,.10)); border-color:rgba(255,20,147,.42); box-shadow:inset 3px 0 0 #ff1493,0 6px 18px rgba(255,20,147,.10); }\n                .rex-main { background:rgba(20,15,23,.88); }\n                .rex-topbar { height:82px; padding:0 24px; border-bottom-color:rgba(255,20,147,.16); }\n                .rex-heading h2 { color:#fff; }\n                .rex-heading p { color:#c188a8; }\n                .rex-search { background:rgba(255,255,255,.05); border-color:rgba(255,20,147,.25); border-radius:10px; }\n                .rex-search:focus-within { border-color:#ff1493; box-shadow:0 0 0 3px rgba(255,20,147,.12); }\n                .rex-content { padding:18px 18px 22px; }\n                .rex-module-card { background:rgba(255,255,255,.045); border-color:rgba(255,20,147,.13); border-radius:13px; }\n                .rex-module-card:hover { background:rgba(255,20,147,.09); border-color:rgba(255,20,147,.30); transform:translateY(-1px); }\n                .rex-module-card.active { background:linear-gradient(90deg,rgba(255,20,147,.19),rgba(255,20,147,.06)); border-color:rgba(255,20,147,.48); }\n                .rex-switch.on { background:linear-gradient(90deg,#ff1493,#ff1493); box-shadow:0 0 12px rgba(255,20,147,.28); }\n                .rex-footer { border-top-color:rgba(255,20,147,.16); color:#9e6f89; }\n                .rex-footer strong { color:#ff1493; }\n                .rex-shell { display:flex; flex-direction:column; width:min(1060px,calc(100vw - 28px)); height:min(640px,calc(100vh - 28px)); background:radial-gradient(circle at 85% 0%,rgba(255,20,147,.18),transparent 34%),linear-gradient(145deg,#120d18,#211126 48%,#100c15); border:1px solid rgba(255,20,147,.55); border-radius:24px; box-shadow:0 30px 110px rgba(0,0,0,.85),0 0 70px rgba(255,20,147,.18); }\n                .rex-sidebar { width:100%; height:94px; min-height:94px; flex:none; display:flex; flex-direction:row; align-items:center; gap:18px; padding:14px 22px; background:linear-gradient(90deg,#2b132c,#1d1125 62%,#301329); border-right:0; border-bottom:1px solid rgba(255,20,147,.28); }\n                .rex-brand { width:230px; flex:none; padding:0 14px 0 0; border-bottom:0; border-right:1px solid rgba(255,20,147,.22); }\n                .rex-sidebar > .rex-section-label { display:none; }\n                .rex-sidebar > .rex-nav:not(.rex-general-nav) { display:flex; flex:1; flex-direction:row; align-items:center; gap:6px; }\n                .rex-sidebar .rex-nav-btn { height:42px; padding:0 12px; white-space:nowrap; }\n                .rex-sidebar .rex-nav-icon { display:none; }\n                .rex-sidebar .rex-nav-count { margin-left:8px; }\n                .rex-sidebar .rex-general-nav { display:flex; flex-direction:row; gap:6px; margin-left:auto; }\n                .rex-sidebar .rex-general-nav .rex-nav-btn { width:38px; padding:0; justify-content:center; font-size:0; }\n                .rex-sidebar .rex-general-nav .rex-nav-icon { display:block; font-size:17px; }\n                .rex-sidebar-bottom { order:3; margin:0; padding:0 0 0 16px; border-top:0; border-left:1px solid rgba(255,20,147,.22); min-width:110px; }\n                .rex-main { flex:1; min-height:0; background:rgba(15,10,20,.76); }\n                .rex-topbar { height:104px; padding:0 28px; background:linear-gradient(90deg,rgba(255,20,147,.08),transparent); border-bottom:1px solid rgba(255,20,147,.18); }\n                .rex-heading h2 { font-size:25px; letter-spacing:-.8px; }\n                .rex-heading p { margin-top:8px; color:#e2a1c4; }\n                .rex-search { width:260px; height:40px; border-radius:13px; }\n                .rex-content { padding:22px 28px 28px; }\n                .rex-module-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-content:start; }\n                .rex-module-card { margin-bottom:0; min-height:86px; border-radius:16px; background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,20,147,.045)); }\n                .rex-module-row { min-height:86px; padding:0 18px; }\n                .rex-module-title { font-size:13px; }\n                .rex-module-desc { color:#bb83a6; }\n                .rex-settings { grid-column:1 / -1; }\n                .rex-footer { height:44px; flex:none; padding:0 28px; }\n                @media(max-width:760px){ .rex-sidebar{height:auto;min-height:94px;flex-wrap:wrap}.rex-brand{width:auto}.rex-sidebar > .rex-nav:not(.rex-general-nav){order:4;width:100%;overflow:auto}.rex-sidebar-bottom{display:none}.rex-module-list{grid-template-columns:1fr}.rex-topbar{padding:0 18px}.rex-content{padding:16px}.rex-search{width:190px} }\n            ";
+      _0x641fd3.textContent = "\n                :host {\n                    --theme-rgb: 255, 105, 180;\n                    --primary: rgb(var(--theme-rgb));\n                    --bg: #202022;\n                    --bg-2: #252527;\n                    --bg-3: #2b2b2e;\n                    --line: rgba(255,255,255,.075);\n                    --text: #f4f4f4;\n                    --muted: #929298;\n                    --switch: #e8e8ea;\n                    --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n                    position: relative;\n                }\n                * { box-sizing: border-box; }\n                .rex-overlay {\n                    position: fixed; inset: 0; z-index: 9998;\n                    background: rgba(0,0,0,.30);\n                    backdrop-filter: none;\n                    opacity: 0; pointer-events: none;\n                    transition: opacity .22s ease;\n                }\n                .rex-overlay.visible { opacity: 1; pointer-events: auto; }\n                .rex-shell {\n                    position: fixed;\n                    left: 50%; top: 50%;\n                    width: min(930px, calc(100vw - 56px));\n                    height: min(555px, calc(100vh - 56px));\n                    transform: translate(-50%, -47%) scale(.985);\n                    opacity: 0; pointer-events: none;\n                    z-index: 2147483646;\n                    display: grid;\n                    grid-template-columns: 228px minmax(0,1fr);\n                    overflow: auto;\n                    color: var(--text);\n                    font-family: var(--font);\n                    background: var(--bg);\n                    border: 1px solid rgba(255,255,255,.08);\n                    border-radius: 12px;\n                    box-shadow: 0 24px 80px rgba(0,0,0,.68), 0 0 0 1px rgba(0,0,0,.35);\n                    transition: opacity .22s ease, transform .22s cubic-bezier(.2,.8,.2,1);\n                    user-select: none;\n                }\n                .rex-shell.visible { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }\n                .rex-sidebar {\n                    min-width: 0; display:flex; flex-direction:column;\n                    padding: 18px 12px 14px;\n                    background: #1d1d1f;\n                    border-right: 1px solid var(--line);\n                }\n                .rex-brand { display:flex; align-items:center; gap:11px; padding: 2px 8px 17px; border-bottom:1px solid var(--line); }\n                .rex-brand-icon { width:31px;height:31px;border-radius:7px;display:grid;place-items:center;background:var(--primary);color:#fff;font-size:18px;font-weight:800;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06); }\n                .rex-brand-title { font-size:18px;font-weight:750;line-height:1;letter-spacing:-.4px; }\n                .rex-brand-sub { margin-top:4px;font-size:9px;color:#747478; }\n                .rex-section-label { margin:18px 8px 8px;font-size:9px;color:#6f6f74;text-transform:uppercase;letter-spacing:.7px;font-weight:700; }\n                .rex-nav { display:flex;flex-direction:column;gap:4px; }\n                .rex-nav-btn { height:38px;display:flex;align-items:center;gap:10px;padding:0 10px;border-radius:8px;color:#8f8f94;font-size:12px;font-weight:600;cursor:pointer;transition:.16s ease;background:transparent;border:1px solid transparent; }\n                .rex-nav-btn:hover { color:#ddd;background:#28282b; }\n                .rex-nav-btn.active { color:#fff;background:#444448;border-color:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(255,255,255,.02); }\n                .rex-nav-icon { width:20px;text-align:center;font-size:15px;opacity:.9; }\n                .rex-nav-count { margin-left:auto;min-width:22px;text-align:center;padding:2px 5px;border-radius:6px;background:#303034;color:#77777d;font-size:9px; }\n                .rex-nav-btn.active .rex-nav-count { color:#c8c8cc;background:#505054; }\n                .rex-sidebar-bottom { margin-top:auto;padding:11px 8px 0;border-top:1px solid var(--line); }\n                .rex-status { display:flex;align-items:center;gap:8px;color:#77777c;font-size:10px; }\n                .rex-dot { width:7px;height:7px;border-radius:50%;background:#5e5e63;box-shadow:0 0 8px rgba(255,255,255,.1); }\n                .rex-dot.ready { background:#79d69c;box-shadow:0 0 8px rgba(121,214,156,.35); }\n                .rex-version { margin-top:6px;color:#5f5f64;font-size:9px; }\n                .rex-main { min-width:0;display:flex;flex-direction:column;background:#242426; }\n                .rex-topbar { height:70px;display:flex;align-items:center;gap:18px;padding:0 20px;border-bottom:1px solid var(--line); }\n                .rex-heading { min-width:0; }\n                .rex-heading h2 { margin:0;font-size:19px;line-height:1.1;letter-spacing:-.3px;font-weight:760; }\n                .rex-heading p { margin:6px 0 0;color:#77777d;font-size:10px; }\n                .rex-search { margin-left:auto;width:220px;height:34px;display:flex;align-items:center;gap:8px;padding:0 11px;border:1px solid rgba(255,255,255,.09);border-radius:7px;background:#1d1d1f;color:#88888d; }\n                .rex-search span { font-size:13px; }\n                .rex-search input { width:100%;border:0;outline:0;background:transparent;color:#ddd;font:10px var(--font); }\n                .rex-search input::placeholder { color:#6e6e73; }\n                .rex-content { flex:1;min-height:0;overflow:auto;padding:12px 12px 18px; }\n                .rex-content::-webkit-scrollbar { width:7px; }\n                .rex-content::-webkit-scrollbar-thumb { background:#39393c;border-radius:8px; }\n                .rex-module-card { background:#29292c;border:1px solid rgba(255,255,255,.055);border-radius:9px;margin-bottom:7px;overflow:hidden;transition:background .14s ease,border-color .14s ease,transform .14s ease; }\n                .rex-module-card:hover { background:#303033;border-color:rgba(255,255,255,.09); }\n                .rex-module-row { min-height:62px;display:flex;align-items:center;padding:0 15px;gap:12px;cursor:pointer; }\n                .rex-module-name { min-width:0;flex:1; }\n                .rex-module-title { font-size:12px;font-weight:700;color:#e9e9eb; }\n                .rex-module-desc { margin-top:4px;color:#77777d;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }\n                .rex-module-gear { width:22px;height:22px;display:grid;place-items:center;color:#77777c;font-size:13px;cursor:pointer;transition:.15s; }\n                .rex-module-gear:hover { color:#fff;transform:rotate(20deg); }\n                .rex-switch { position:relative;width:43px;height:22px;flex:0 0 auto;border-radius:99px;background:#151517;border:1px solid rgba(255,255,255,.05);cursor:pointer;transition:.16s; }\n                .rex-switch::after { content:\"\";position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:#e9e9eb;transition:.16s;box-shadow:0 1px 4px rgba(0,0,0,.4); }\n                .rex-switch.on { background:var(--primary); }\n                .rex-switch.on::after { left:24px; }\n                .rex-module-card.active { background:rgba(var(--theme-rgb),.16);border-color:rgba(var(--theme-rgb),.42); }\n                .rex-settings { display:none;padding:0 15px 12px;border-top:1px solid var(--line);background:#252527; }\n                .rex-settings.open { display:block; }\n                .rex-setting { padding-top:11px; }\n                .rex-setting-line { display:flex;justify-content:space-between;align-items:center;gap:12px;color:#a0a0a5;font-size:9px;font-weight:650; }\n                .rex-setting-value { color:#dedee1;min-width:34px;text-align:right; }\n                .rex-range { width:100%;height:3px;margin:10px 0 1px;appearance:none;background:#444448;border-radius:4px;outline:0; }\n                .rex-range::-webkit-slider-thumb { appearance:none;width:12px;height:12px;border-radius:50%;background:#f2f2f2;box-shadow:0 1px 5px rgba(0,0,0,.45);cursor:pointer; }\n                .rex-check-row { display:flex;justify-content:space-between;align-items:center; }\n                .rex-mini-switch { position:relative;width:34px;height:18px;border-radius:99px;background:#161618;cursor:pointer; }\n                .rex-mini-switch::after { content:\"\";position:absolute;top:3px;left:3px;width:12px;height:12px;border-radius:50%;background:#ddd;transition:.15s; }\n                .rex-mini-switch.on::after { left:19px; }\n                .rex-select { background:#1b1b1d;color:#ddd;border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:5px 8px;outline:0;font:9px var(--font); }\n                .rex-empty { padding:28px 12px;text-align:center;color:#6f6f74;font-size:11px; }\n                .rex-footer { height:40px;display:flex;align-items:center;padding:0 18px;border-top:1px solid var(--line);color:#68686e;font-size:9px; }\n                .rex-footer strong { color:#9b9ba0; }\n                .rex-watermark { position:fixed;top:6px;left:15px;color:var(--primary);font:700 17px var(--font);line-height:1.05;text-shadow:0 2px 10px #000;z-index:9997;display:none;pointer-events:none; }\n                .rex-watermark-version { display:block;font-size:10px;letter-spacing:1.5px;margin-bottom:2px;opacity:.9; }\n                .rex-watermark-name { display:block;font-size:17px;line-height:1.05; }\n                .rex-array { position:fixed;top:15px;right:15px;display:none;flex-direction:column;align-items:flex-end;gap:4px;z-index:9997;pointer-events:none;font:700 10px var(--font); }\n                .rex-array-item { padding:4px 8px;background:rgba(20,20,22,.72);border-right:2px solid var(--primary);border-radius:4px 0 0 4px;color:#fff;backdrop-filter:blur(5px); }\n                .rex-hud-info { position:fixed;top:15px;left:50%;transform:translateX(-50%);display:none;gap:14px;padding:5px 12px;border:1px solid rgba(255,255,255,.08);border-radius:7px;background:rgba(20,20,22,.72);color:#fff;font:700 10px var(--font);z-index:9997; }\n                .rex-keystrokes { position:fixed;top:100px;left:15px;display:none;flex-direction:column;gap:3px;z-index:9997;font-family:var(--font); }\n                .rex-key-row { display:flex;gap:3px;justify-content:center; }\n                .rex-key { width:27px;height:27px;display:grid;place-items:center;background:rgba(20,20,22,.72);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:#eee;font-size:10px;font-weight:750; }\n                .rex-key.active { background:rgba(var(--theme-rgb),.35);border-color:var(--primary);transform:scale(.96); }\n                .rex-key.mouse { width:42px;display:flex;flex-direction:column;gap:1px; }\n                .rex-cps { font-size:7px;color:#999; }\n                .rex-menu-button { position:fixed;top:10px;left:50%;transform:translateX(-50%);width:42px;height:42px;display:grid;place-items:center;background:rgba(24,24,27,.96);border:1px solid rgba(255,255,255,.16);border-radius:8px;color:#eee;cursor:pointer;z-index:2147483647;font:700 21px var(--font);pointer-events:auto !important;user-select:none;touch-action:manipulation;box-shadow:0 5px 22px rgba(0,0,0,.5);transition:transform .15s ease,background .15s ease,border-color .15s ease; }\n                .rex-menu-button:hover { background:#303034;border-color:var(--primary);transform:translateX(-50%) scale(1.05); }\n                .rex-menu-button.open { background:var(--primary);border-color:var(--primary);color:#fff; }\n                .rex-notify { position:fixed;right:20px;bottom:24px;display:flex;flex-direction:column;align-items:flex-end;gap:8px;z-index:10001;pointer-events:none;font-family:var(--font); }\n                .rex-toast { min-width:190px;padding:9px 13px;border-radius:6px;background:#242426;border:1px solid rgba(255,255,255,.1);border-left:3px solid var(--primary);box-shadow:0 10px 30px rgba(0,0,0,.45);color:#fff;font-size:10px;opacity:0;transform:translateX(30px);transition:.25s; }\n                .rex-toast.show { opacity:1;transform:none; }\n                @media(max-width:760px){ .rex-shell{grid-template-columns:170px minmax(0,1fr);width:calc(100vw - 20px);height:calc(100vh - 20px)} .rex-search{width:150px}.rex-brand-title{font-size:15px}.rex-nav-btn{font-size:10px} }\n                @media(max-width:560px){ .rex-shell{grid-template-columns:1fr}.rex-sidebar{display:none}.rex-topbar{padding:0 12px}.rex-heading h2{font-size:16px}.rex-search{width:120px}.rex-module-desc{display:none} }\n                .rex-shell { width:min(980px,calc(100vw - 34px)); height:min(590px,calc(100vh - 34px)); grid-template-columns:248px minmax(0,1fr); background:linear-gradient(135deg,#211522 0%,#151219 58%,#241321 100%); border:1px solid rgba(255,105,180,.38); border-radius:20px; box-shadow:0 28px 90px rgba(0,0,0,.78),0 0 40px rgba(255,105,180,.12); }\n                .rex-sidebar { padding:22px 14px 16px; background:linear-gradient(180deg,#291629 0%,#1b121d 100%); border-right:1px solid rgba(255,105,180,.18); }\n                .rex-brand { padding:0 9px 20px; border-bottom:1px solid rgba(255,105,180,.18); }\n                .rex-brand-icon { background:linear-gradient(135deg,#ff69b4,#ff3d9b); border-radius:11px; box-shadow:0 0 18px rgba(255,105,180,.35); }\n                .rex-brand-title { font-size:19px; letter-spacing:-.6px; }\n                .rex-brand-sub { color:#ff9bc9; text-transform:uppercase; letter-spacing:1.5px; }\n                .rex-nav-btn { border-radius:11px; }\n                .rex-nav-btn:hover { color:#fff; background:rgba(255,105,180,.10); }\n                .rex-nav-btn.active { color:#fff; background:linear-gradient(90deg,rgba(255,105,180,.30),rgba(255,105,180,.10)); border-color:rgba(255,105,180,.42); box-shadow:inset 3px 0 0 #ff69b4,0 6px 18px rgba(255,105,180,.10); }\n                .rex-main { background:rgba(20,15,23,.88); }\n                .rex-topbar { height:82px; padding:0 24px; border-bottom-color:rgba(255,105,180,.16); }\n                .rex-heading h2 { color:#fff; }\n                .rex-heading p { color:#c188a8; }\n                .rex-search { background:rgba(255,255,255,.05); border-color:rgba(255,105,180,.25); border-radius:10px; }\n                .rex-search:focus-within { border-color:#ff69b4; box-shadow:0 0 0 3px rgba(255,105,180,.12); }\n                .rex-content { padding:18px 18px 22px; }\n                .rex-module-card { background:rgba(255,255,255,.045); border-color:rgba(255,105,180,.13); border-radius:13px; }\n                .rex-module-card:hover { background:rgba(255,105,180,.09); border-color:rgba(255,105,180,.30); transform:translateY(-1px); }\n                .rex-module-card.active { background:linear-gradient(90deg,rgba(255,105,180,.19),rgba(255,105,180,.06)); border-color:rgba(255,105,180,.48); }\n                .rex-switch.on { background:linear-gradient(90deg,#ff4aa5,#ff8ac5); box-shadow:0 0 12px rgba(255,105,180,.28); }\n                .rex-footer { border-top-color:rgba(255,105,180,.16); color:#9e6f89; }\n                .rex-footer strong { color:#ff9bc9; }\n                .rex-shell { display:flex; flex-direction:column; width:min(1060px,calc(100vw - 28px)); height:min(640px,calc(100vh - 28px)); background:radial-gradient(circle at 85% 0%,rgba(255,105,180,.18),transparent 34%),linear-gradient(145deg,#120d18,#211126 48%,#100c15); border:1px solid rgba(255,105,180,.55); border-radius:24px; box-shadow:0 30px 110px rgba(0,0,0,.85),0 0 70px rgba(255,105,180,.18); }\n                .rex-sidebar { width:100%; height:94px; min-height:94px; flex:none; display:flex; flex-direction:row; align-items:center; gap:18px; padding:14px 22px; background:linear-gradient(90deg,#2b132c,#1d1125 62%,#301329); border-right:0; border-bottom:1px solid rgba(255,105,180,.28); }\n                .rex-brand { width:230px; flex:none; padding:0 14px 0 0; border-bottom:0; border-right:1px solid rgba(255,105,180,.22); }\n                .rex-sidebar > .rex-section-label { display:none; }\n                .rex-sidebar > .rex-nav:not(.rex-general-nav) { display:flex; flex:1; flex-direction:row; align-items:center; gap:6px; }\n                .rex-sidebar .rex-nav-btn { height:42px; padding:0 12px; white-space:nowrap; }\n                .rex-sidebar .rex-nav-icon { display:none; }\n                .rex-sidebar .rex-nav-count { margin-left:8px; }\n                .rex-sidebar .rex-general-nav { display:flex; flex-direction:row; gap:6px; margin-left:auto; }\n                .rex-sidebar .rex-general-nav .rex-nav-btn { width:38px; padding:0; justify-content:center; font-size:0; }\n                .rex-sidebar .rex-general-nav .rex-nav-icon { display:block; font-size:17px; }\n                .rex-sidebar-bottom { order:3; margin:0; padding:0 0 0 16px; border-top:0; border-left:1px solid rgba(255,105,180,.22); min-width:110px; }\n                .rex-main { flex:1; min-height:0; background:rgba(15,10,20,.76); }\n                .rex-topbar { height:104px; padding:0 28px; background:linear-gradient(90deg,rgba(255,105,180,.08),transparent); border-bottom:1px solid rgba(255,105,180,.18); }\n                .rex-heading h2 { font-size:25px; letter-spacing:-.8px; }\n                .rex-heading p { margin-top:8px; color:#e2a1c4; }\n                .rex-search { width:260px; height:40px; border-radius:13px; }\n                .rex-content { padding:22px 28px 28px; }\n                .rex-module-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; align-content:start; }\n                .rex-module-card { margin-bottom:0; min-height:86px; border-radius:16px; background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,105,180,.045)); }\n                .rex-module-row { min-height:86px; padding:0 18px; }\n                .rex-module-title { font-size:13px; }\n                .rex-module-desc { color:#bb83a6; }\n                .rex-settings { grid-column:1 / -1; }\n                .rex-footer { height:44px; flex:none; padding:0 28px; }\n                @media(max-width:760px){ .rex-sidebar{height:auto;min-height:94px;flex-wrap:wrap}.rex-brand{width:auto}.rex-sidebar > .rex-nav:not(.rex-general-nav){order:4;width:100%;overflow:auto}.rex-sidebar-bottom{display:none}.rex-module-list{grid-template-columns:1fr}.rex-topbar{padding:0 18px}.rex-content{padding:16px}.rex-search{width:190px} }\n            ";
       this.shadowRoot.appendChild(_0x641fd3);
     },
     createShadowHost() {
@@ -621,7 +622,7 @@
       this.shell.className = "rex-shell";
       this.shell.style.zIndex = "2147483646";
       this.shell.style.pointerEvents = "auto";
-      this.shell.innerHTML = "\n                <aside class=\"rex-sidebar\">\n                    <div class=\"rex-brand\">\n                        <div class=\"rex-brand-icon\">C</div>\n                        <div><div class=\"rex-brand-title\">CoreX V1</div><div class=\"rex-brand-sub\">V1</div></div>\n                    </div>\n                    <div class=\"rex-section-label\">Modules</div>\n                    <nav class=\"rex-nav\"></nav>\n                    <div class=\"rex-section-label\">General</div>\n                    <nav class=\"rex-nav rex-general-nav\">\n                        <div class=\"rex-nav-btn\" data-general=\"settings\"><span class=\"rex-nav-icon\">⚙</span><span>Settings</span></div>\n                        <div class=\"rex-nav-btn\" data-general=\"configs\"><span class=\"rex-nav-icon\">▣</span><span>Configs</span></div>\n                    </nav>\n                    <div class=\"rex-sidebar-bottom\"><div class=\"rex-status\"><span class=\"rex-dot\" id=\"rex-ready-dot\"></span><span id=\"rex-status-text\">Waiting</span></div><div class=\"rex-version\">CoreX V1</div></div>\n                </aside>\n                <main class=\"rex-main\">\n                    <header class=\"rex-topbar\">\n                        <div class=\"rex-heading\"><h2 id=\"rex-category-title\">Combat Modules</h2><p id=\"rex-category-subtitle\">Modules and settings</p></div>\n                        <label class=\"rex-search\"><span>⌕</span><input id=\"rex-search-input\" type=\"text\" placeholder=\"Search modules\" autocomplete=\"off\"></label>\n                    </header>\n                    <section class=\"rex-content\"><div class=\"rex-module-list\"></div></section>\n                    <footer class=\"rex-footer\"><strong>RightShift</strong>&nbsp; to toggle menu&nbsp; • &nbsp;Right click a module to bind a key</footer>\n                </main>\n            ";
+      this.shell.innerHTML = "\n                <aside class=\"rex-sidebar\">\n                    <div class=\"rex-brand\">\n                        <div class=\"rex-brand-icon\">C</div>\n                        <div><div class=\"rex-brand-title\">CoreX V1</div><div class=\"rex-brand-sub\">V1</div></div>\n                    </div>\n                    <div class=\"rex-section-label\">Modules</div>\n                    <nav class=\"rex-nav\"></nav>\n                    <div class=\"rex-section-label\">General</div>\n                    <nav class=\"rex-nav rex-general-nav\">\n                        <div class=\"rex-nav-btn\" data-general=\"settings\"><span class=\"rex-nav-icon\">⚙</span><span>Settings</span></div>\n                        <div class=\"rex-nav-btn\" data-general=\"theme\"><span class=\"rex-nav-icon\">◈</span><span>Theme</span></div>\n                        <div class=\"rex-nav-btn\" data-general=\"configs\"><span class=\"rex-nav-icon\">▣</span><span>Configs</span></div>\n                    </nav>\n                    <div class=\"rex-sidebar-bottom\"><div class=\"rex-status\"><span class=\"rex-dot\" id=\"rex-ready-dot\"></span><span id=\"rex-status-text\">Waiting</span></div><div class=\"rex-version\">CoreX V1</div></div>\n                </aside>\n                <main class=\"rex-main\">\n                    <header class=\"rex-topbar\">\n                        <div class=\"rex-heading\"><h2 id=\"rex-category-title\">Combat Modules</h2><p id=\"rex-category-subtitle\">Modules and settings</p></div>\n                        <label class=\"rex-search\"><span>⌕</span><input id=\"rex-search-input\" type=\"text\" placeholder=\"Search modules\" autocomplete=\"off\"></label>\n                    </header>\n                    <section class=\"rex-content\"><div class=\"rex-module-list\"></div></section>\n                    <footer class=\"rex-footer\"><strong>RightShift</strong>&nbsp; to toggle menu&nbsp; • &nbsp;Right click a module to bind a key</footer>\n                </main>\n            ";
       this.shadowRoot.appendChild(this.shell);
       this.content = this.shell.querySelector(".rex-content");
       this.moduleList = this.shell.querySelector(".rex-module-list");
@@ -783,22 +784,6 @@
           return (_0x3ai < 0 ? 999 : _0x3ai) - (_0x3bi < 0 ? 999 : _0x3bi);
         });
       }
-      if (this.activeCategory === "Combat") {
-        const _0xcombatOrder = ["Kill Aura", "Aimbot", "Auto Trigger", "Magic Bullet", "Auto Drink", "Trap Aura"];
-        _0x49e37b.sort((_0x3a, _0x3b) => {
-          const _0x3ai = _0xcombatOrder.indexOf(_0x3a.name);
-          const _0x3bi = _0xcombatOrder.indexOf(_0x3b.name);
-          return (_0x3ai < 0 ? 999 : _0x3ai) - (_0x3bi < 0 ? 999 : _0x3bi);
-        });
-      }
-      if (this.activeCategory === "Visuals") {
-        const _0xvisualOrder = ["ESP", "Tracer Lines", "Nametag Display", "No FOV", "Player Coordinates", "Night Mode", "Animation", "Item Spin", "Derp", "X-Ray", "Target HUD"];
-        _0x49e37b.sort((_0x3a, _0x3b) => {
-          const _0x3ai = _0xvisualOrder.indexOf(_0x3a.name);
-          const _0x3bi = _0xvisualOrder.indexOf(_0x3b.name);
-          return (_0x3ai < 0 ? 999 : _0x3ai) - (_0x3bi < 0 ? 999 : _0x3bi);
-        });
-      }
       const _0x4c19df = this.shadowRoot.getElementById("rex-category-title");
       const _0x17146b = this.shadowRoot.getElementById("rex-category-subtitle");
       if (_0x4c19df) {
@@ -827,7 +812,7 @@
       _0x2f2197.innerHTML = "<div class=\"rex-module-title\">" + _0x5407c9.name + "</div><div class=\"rex-module-desc\">" + this.getModuleDescription(_0x5407c9) + "</div>";
       const _0x5a2bd4 = document.createElement("div");
       _0x5a2bd4.style.cssText = "display:flex;align-items:center;gap:8px;";
-      if (_0x5407c9.settings && Object.keys(_0x5407c9.settings).length > 0) {
+      if (_0x5407c9.settings) {
         const _0x5369d9 = document.createElement("div");
         _0x5369d9.className = "rex-module-gear";
         _0x5369d9.textContent = "⚙";
@@ -868,7 +853,7 @@
         if (_0x50a89e.target === _0x102f70 || _0x50a89e.target.closest(".rex-module-gear")) {
           return;
         }
-        if (_0x5407c9.settings && Object.keys(_0x5407c9.settings).length > 0) {
+        if (_0x5407c9.settings) {
           _0x32ec65.classList.toggle("open");
         } else {
           _0x412e14();
@@ -1400,7 +1385,6 @@
   _0xce6d44();
   setInterval(_0xce6d44, 3000);
   function _0x430608() {
-    // ---- Combat Module (sortiert) ----
     _0xaa4c31.modules["Kill Aura"] = new _0x14b9fa("Kill Aura", "Combat", {
       lastAttackTime: 0,
       currentDelay: 50,
@@ -1552,7 +1536,6 @@
         }
       }
     });
-
     _0xaa4c31.modules.Aimbot = new _0x14b9fa("Aimbot", "Combat", {
       settings: {
         Strength: {
@@ -1620,7 +1603,6 @@
         _0x1e4566.pitch += (_0xba125c.pitch - _0x1e4566.pitch) * _0x164805;
       }
     });
-
     _0xaa4c31.modules["Auto Trigger"] = new _0x14b9fa("Auto Trigger", "Combat", {
       onEnable: function () {
         this.setLoop(() => {
@@ -1646,7 +1628,6 @@
         });
       }
     });
-
     _0xaa4c31.modules["Magic Bullet"] = new _0x14b9fa("Magic Bullet", "Combat", {
       _OriginalFireBullet: null,
       onEnable: function () {
@@ -1716,7 +1697,6 @@
         this._OriginalFireBullet = null;
       }
     });
-
     _0xaa4c31.modules["Auto Drink"] = new _0x14b9fa("Auto Drink", "Combat", {
       lastSwapTime: 0,
       settings: {
@@ -1759,8 +1739,6 @@
         }, 200);
       }
     });
-
-    // Trap Aura – ohne "Trap Target"
     _0xaa4c31.modules["Trap Aura"] = new _0x14b9fa("Trap Aura", "Combat", {
       settings: {
         "Y Offset": {
@@ -1785,7 +1763,7 @@
         Hollow: {
           type: "checkbox",
           value: true
-        }
+        },
       },
       onTick: function () {
         const _0x51d530 = _0x3b2d5e.getPlayerEntity();
@@ -1794,6 +1772,99 @@
         }
         const _0x21bde1 = _0x3b2d5e.getPosition(1);
         if (!_0x21bde1) {
+          return;
+        }
+        if (false) {
+          const _0x13e2b0 = _0x3b2d5e.playerList;
+          const _0x27866a = 8;
+          const _0x3b4572 = _0x21bde1;
+          for (const _0x47d9a8 of _0x13e2b0) {
+            const _0x5e602d = _0x3b2d5e.getPosition(_0x47d9a8);
+            if (!_0x5e602d) {
+              continue;
+            }
+            const _0x12cef4 = Math.hypot(_0x5e602d[0] - _0x3b4572[0], _0x5e602d[1] - _0x3b4572[1], _0x5e602d[2] - _0x3b4572[2]);
+            if (_0x12cef4 > _0x27866a) {
+              continue;
+            }
+            let _0x467e5f = null;
+            try {
+              _0x467e5f = _0x17466b.noa.entities.getState(_0x47d9a8, "movement");
+            } catch (_0x1278d1) {}
+            let _0x14e690 = false;
+            let _0x30c0a7 = [0, 0, 0];
+            if (_0x467e5f) {
+              if (_0x467e5f.sprinting !== undefined) {
+                _0x14e690 = !!_0x467e5f.sprinting;
+              } else if (_0x467e5f.velocity) {
+                let _0x11bd38 = 0;
+                let _0x4c4f71 = 0;
+                let _0x1b9c1c = 0;
+                if (Array.isArray(_0x467e5f.velocity)) {
+                  _0x11bd38 = _0x467e5f.velocity[0] || 0;
+                  _0x4c4f71 = _0x467e5f.velocity[1] || 0;
+                  _0x1b9c1c = _0x467e5f.velocity[2] || 0;
+                } else if (typeof _0x467e5f.velocity === "object") {
+                  _0x11bd38 = _0x467e5f.velocity.x || 0;
+                  _0x4c4f71 = _0x467e5f.velocity.y || 0;
+                  _0x1b9c1c = _0x467e5f.velocity.z || 0;
+                }
+                const _0x133dfa = Math.hypot(_0x11bd38, _0x4c4f71, _0x1b9c1c);
+                if (_0x133dfa > 4.5) {
+                  _0x14e690 = true;
+                }
+                _0x30c0a7 = [_0x11bd38, _0x4c4f71, _0x1b9c1c];
+              }
+              if (_0x467e5f.velocity) {
+                if (Array.isArray(_0x467e5f.velocity)) {
+                  _0x30c0a7 = _0x467e5f.velocity;
+                } else if (typeof _0x467e5f.velocity === "object") {
+                  _0x30c0a7 = [_0x467e5f.velocity.x || 0, _0x467e5f.velocity.y || 0, _0x467e5f.velocity.z || 0];
+                }
+              }
+            }
+            let _0x5627c2 = _0x5e602d[0];
+            let _0x2fefa0 = _0x5e602d[1];
+            let _0x4e5ec7 = _0x5e602d[2];
+            if (_0x14e690) {
+              const _0x590539 = Math.hypot(_0x30c0a7[0], _0x30c0a7[1], _0x30c0a7[2]);
+              if (_0x590539 > 0.01) {
+                const _0xb98915 = _0x30c0a7[0] / _0x590539;
+                const _0x869c78 = _0x30c0a7[1] / _0x590539;
+                const _0x261153 = _0x30c0a7[2] / _0x590539;
+                _0x5627c2 = _0x5e602d[0] + _0xb98915;
+                _0x2fefa0 = _0x5e602d[1] + _0x869c78;
+                _0x4e5ec7 = _0x5e602d[2] + _0x261153;
+              }
+            }
+            const _0x1f899e = Math.floor(_0x5627c2);
+            const _0x58680e = Math.floor(_0x2fefa0);
+            const _0x131427 = Math.floor(_0x4e5ec7);
+            const _0xbed4f3 = [];
+            for (let _0x1f5c88 = 0; _0x1f5c88 < 3; _0x1f5c88++) {
+              _0xbed4f3.push([1, _0x1f5c88, 0]);
+              _0xbed4f3.push([-1, _0x1f5c88, 0]);
+              _0xbed4f3.push([0, _0x1f5c88, 1]);
+              _0xbed4f3.push([0, _0x1f5c88, -1]);
+            }
+            _0xbed4f3.push([0, 3, 0]);
+            _0xbed4f3.push([0, -1, 0]);
+            for (const [_0x928e57, _0x292455, _0x1286a9] of _0xbed4f3) {
+              const _0x403f28 = _0x1f899e + _0x928e57;
+              const _0x30f8ac = _0x58680e + _0x292455;
+              const _0x39c398 = _0x131427 + _0x1286a9;
+              const _0x2f0688 = Math.floor(_0x3b4572[0]);
+              const _0x42a472 = Math.floor(_0x3b4572[1]);
+              const _0x1df9d9 = Math.floor(_0x3b4572[2]);
+              if (_0x403f28 === _0x2f0688 && _0x30f8ac === _0x42a472 && _0x39c398 === _0x1df9d9) {
+                continue;
+              }
+              if (_0x3b2d5e.getBlockID(_0x403f28, _0x30f8ac, _0x39c398) !== 0) {
+                continue;
+              }
+              _0x3b2d5e.placeBlock([_0x403f28, _0x30f8ac, _0x39c398]);
+            }
+          }
           return;
         }
         const _0xb60b7d = Math.floor(_0x21bde1[0]);
@@ -1829,8 +1900,6 @@
         }
       }
     });
-
-    // ---- Movement (unverändert) ----
     _0xaa4c31.modules.Scaffold = new _0x14b9fa("Scaffold", "Movement", {
       settings: {
         "Lock Y": {
@@ -2039,7 +2108,6 @@
         this._isBuilding = false;
       }
     });
-
     _0xaa4c31.modules.Bhop = new _0x14b9fa("Bhop", "Movement", {
       wasGrounded: false,
       lastJumpTime: 0,
@@ -2090,7 +2158,6 @@
         }
       }
     });
-
     _0xaa4c31.modules["No Slow"] = new _0x14b9fa("No Slow", "Movement", {
       onEnable: () => {
         if (_0x17466b.playerData) {
@@ -2103,7 +2170,6 @@
         }
       }
     });
-
     _0xaa4c31.modules["Auto Sprint"] = new _0x14b9fa("Auto Sprint", "Movement", {
       onEnable: () => {
         if (_0x17466b.playerData) {
@@ -2116,7 +2182,6 @@
         }
       }
     });
-
     _0xaa4c31.modules["Ground Builder"] = new _0x14b9fa("Ground Builder", "Movement", {
       settings: {
         Radius: {
@@ -2208,7 +2273,6 @@
         this._processing = false;
       }
     });
-
     _0xaa4c31.modules.Discord = new _0x14b9fa("Discord", "Movement", {
       type: "action",
       onEnable: function () {
@@ -2223,7 +2287,6 @@
         _0x4f9147.notify(" Discord !", "#5865F2");
       }
     });
-
     _0xaa4c31.modules.Website = new _0x14b9fa("Website", "Movement", {
       type: "action",
       onEnable: function () {
@@ -2238,8 +2301,94 @@
         _0x4f9147.notify(" Website ouvert !", "#00ccff");
       }
     });
-
-    // ---- Visuals (sortiert) ----
+    _0xaa4c31.modules["Tracer Lines"] = new _0x14b9fa("Tracer Lines", "Visuals", {
+      _canvas: null,
+      settings: {
+        Rainbow: {
+          type: "checkbox",
+          value: false
+        },
+        Black: {
+          type: "checkbox",
+          value: false
+        }
+      },
+      onEnable: function () {
+        const _0x51ddb7 = document.getElementById("bone-tracers-canvas");
+        if (_0x51ddb7) {
+          _0x51ddb7.remove();
+        }
+        this._canvas = document.createElement("canvas");
+        this._canvas.id = "bone-tracers-canvas";
+        this._canvas.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9997;";
+        document.body.appendChild(this._canvas);
+        this._resizeHandler = () => {
+          if (this._canvas) {
+            this._canvas.width = window.innerWidth;
+            this._canvas.height = window.innerHeight;
+          }
+        };
+        window.addEventListener("resize", this._resizeHandler);
+        this._resizeHandler();
+      },
+      onTick: function () {
+        try {
+          if (!this._canvas || this._canvas.parentNode !== document.body) {
+            const _0x2d87f3 = document.getElementById("bone-tracers-canvas");
+            if (_0x2d87f3) {
+              _0x2d87f3.remove();
+            }
+            this._canvas = document.createElement("canvas");
+            this._canvas.id = "bone-tracers-canvas";
+            this._canvas.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9997;";
+            document.body.appendChild(this._canvas);
+            this._resizeHandler();
+          }
+          const _0x363b2d = this._canvas.getContext("2d");
+          _0x363b2d.clearRect(0, 0, this._canvas.width, this._canvas.height);
+          const _0x5c6f87 = this.settings.Rainbow.value;
+          const _0x893164 = this.settings.Black.value;
+          let _0x353010 = "#ff69b4";
+          if (_0x893164) _0x353010 = "#000000";
+          else if (_0x5c6f87) {
+            const _0x479195 = Date.now() / 1000 * 50 % 360;
+            _0x353010 = "hsl(" + _0x479195 + ", 100%, 60%)";
+          }
+          _0x363b2d.lineWidth = 2;
+          _0x363b2d.strokeStyle = _0x353010;
+          _0x363b2d.shadowColor = _0x353010;
+          _0x363b2d.shadowBlur = 8;
+          const _0x4f95d1 = _0x3b2d5e.playerList;
+          if (!_0x4f95d1 || _0x4f95d1.length === 0) {
+            return;
+          }
+          const _0x13e9ca = this._canvas.width / 2;
+          const _0x76d7d4 = this._canvas.height / 2;
+          for (let _0x968fd0 of _0x4f95d1) {
+            const _0xcc6bfc = _0x3b2d5e.getPosition(_0x968fd0);
+            if (!_0xcc6bfc) {
+              continue;
+            }
+            const _0x4d359d = _0x3b2d5e.worldToScreen([_0xcc6bfc[0], _0xcc6bfc[1] + 1.6, _0xcc6bfc[2]]);
+            if (!_0x4d359d) {
+              continue;
+            }
+            _0x363b2d.beginPath();
+            _0x363b2d.moveTo(_0x13e9ca, _0x76d7d4);
+            _0x363b2d.lineTo(_0x4d359d.x, _0x4d359d.y);
+            _0x363b2d.stroke();
+          }
+        } catch (_0x58e837) {}
+      },
+      onDisable: function () {
+        const _0x533f17 = document.getElementById("bone-tracers-canvas");
+        if (_0x533f17) {
+          _0x533f17.remove();
+        }
+        this._canvas = null;
+        window.removeEventListener("resize", this._resizeHandler);
+      }
+    });
     _0xaa4c31.modules.ESP = new _0x14b9fa("ESP", "Visuals", {
       _canvas: null,
       _ctx: null,
@@ -2276,7 +2425,7 @@
           min: 0,
           max: 360,
           step: 1,
-          value: 330
+          value: 0
         },
         Rainbow: {
           type: "checkbox",
@@ -2306,7 +2455,7 @@
           const _0x3a331c = _0x569996 * 50 % 360;
           return "hsl(" + _0x3a331c + ", 100%, 60%)";
         }
-        return "hsl(" + _0x66d299 + ", 100%, 60%)";
+        return "hsl(" + ((_0x66d299 + 330) % 360) + ", 100%, 60%)";
       },
       onEnable: function () {
         const _0x46a481 = document.getElementById("rex-esp-canvas");
@@ -2439,176 +2588,337 @@
         }
       }
     });
-
-    _0xaa4c31.modules["Tracer Lines"] = new _0x14b9fa("Tracer Lines", "Visuals", {
-      _canvas: null,
-      settings: {
-        Rainbow: {
-          type: "checkbox",
-          value: false
-        },
-        Black: {
-          type: "checkbox",
-          value: false
-        },
-        Width: {
-          type: "slider",
-          min: 1,
-          max: 10,
-          step: 0.5,
-          value: 1.5
-        }
-      },
-      onEnable: function () {
-        const _0x51ddb7 = document.getElementById("bone-tracers-canvas");
-        if (_0x51ddb7) {
-          _0x51ddb7.remove();
-        }
-        this._canvas = document.createElement("canvas");
-        this._canvas.id = "bone-tracers-canvas";
-        this._canvas.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9997;";
-        document.body.appendChild(this._canvas);
-        this._resizeHandler = () => {
-          if (this._canvas) {
-            this._canvas.width = window.innerWidth;
-            this._canvas.height = window.innerHeight;
-          }
-        };
-        window.addEventListener("resize", this._resizeHandler);
-        this._resizeHandler();
-      },
-      onTick: function () {
-        try {
-          if (!this._canvas || this._canvas.parentNode !== document.body) {
-            const _0x2d87f3 = document.getElementById("bone-tracers-canvas");
-            if (_0x2d87f3) {
-              _0x2d87f3.remove();
-            }
-            this._canvas = document.createElement("canvas");
-            this._canvas.id = "bone-tracers-canvas";
-            this._canvas.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9997;";
-            document.body.appendChild(this._canvas);
-            this._resizeHandler();
-          }
-          const _0x363b2d = this._canvas.getContext("2d");
-          _0x363b2d.clearRect(0, 0, this._canvas.width, this._canvas.height);
-          const _0x5c6f87 = this.settings.Rainbow.value;
-          const _0x893164 = this.settings.Black.value;
-          const _0x387879 = this.settings.Width.value;
-          let _0x353010;
-          if (_0x893164) {
-            _0x353010 = "#000000";
-          } else if (_0x5c6f87) {
-            const _0x2efc42 = Date.now() / 1000;
-            const _0x479195 = _0x2efc42 * 50 % 360;
-            _0x353010 = "hsl(" + _0x479195 + ", 100%, 60%)";
-          } else {
-            _0x353010 = "hsl(330, 100%, 60%)";
-          }
-          _0x363b2d.lineWidth = _0x387879;
-          _0x363b2d.strokeStyle = _0x353010;
-          _0x363b2d.shadowColor = _0x353010;
-          _0x363b2d.shadowBlur = 8;
-          const _0x4f95d1 = _0x3b2d5e.playerList;
-          if (!_0x4f95d1 || _0x4f95d1.length === 0) {
-            return;
-          }
-          const _0x13e9ca = this._canvas.width / 2;
-          const _0x76d7d4 = this._canvas.height / 2;
-          for (let _0x968fd0 of _0x4f95d1) {
-            const _0xcc6bfc = _0x3b2d5e.getPosition(_0x968fd0);
-            if (!_0xcc6bfc) {
-              continue;
-            }
-            const _0x4d359d = _0x3b2d5e.worldToScreen([_0xcc6bfc[0], _0xcc6bfc[1] + 1.6, _0xcc6bfc[2]]);
-            if (!_0x4d359d) {
-              continue;
-            }
-            _0x363b2d.beginPath();
-            _0x363b2d.moveTo(_0x13e9ca, _0x76d7d4);
-            _0x363b2d.lineTo(_0x4d359d.x, _0x4d359d.y);
-            _0x363b2d.stroke();
-          }
-        } catch (_0x58e837) {}
-      },
-      onDisable: function () {
-        const _0x533f17 = document.getElementById("bone-tracers-canvas");
-        if (_0x533f17) {
-          _0x533f17.remove();
-        }
-        this._canvas = null;
-        window.removeEventListener("resize", this._resizeHandler);
-      }
-    });
-
-    // Weitere Visuals (Nametag Display, No FOV, Player Coordinates, Night Mode, Animation, Derp, X-Ray, Target HUD)
-    // … (hier der Kürze halber ausgelassen, aber sie bleiben bestehen)
     _0xaa4c31.modules["Nametag Display"] = new _0x14b9fa("Nametag Display", "Visuals", {
-      onEnable: function () { this.lastUpdate = 0; },
+      onEnable: function () {
+        this.lastUpdate = 0;
+      },
       onTick: function () {
         let _0x5e0cb5 = Date.now();
-        if (_0x5e0cb5 - (this.lastUpdate || 0) < 3000) return;
+        if (_0x5e0cb5 - (this.lastUpdate || 0) < 3000) {
+          return;
+        }
         this.lastUpdate = _0x5e0cb5;
-        if (!_0x17466b.entityList || !_0x17466b.Lion?.scene) return;
+        if (!_0x17466b.entityList || !_0x17466b.Lion?.scene) {
+          return;
+        }
         for (let _0xdc2a03 of Object.values(_0x17466b.entityList)) {
           if (_0xdc2a03) {
             for (let _0x49a56a of Object.values(_0xdc2a03)) {
               if (_0x49a56a?.lobbyLeaderboardValues) {
-                Object.defineProperty(_0x49a56a, "hasPriorityNametag", { get: () => true, set(_0x100838) {}, configurable: true });
-                Object.defineProperty(_0x49a56a, "canSee", { get: () => true, set(_0x337151) {}, configurable: true });
+                Object.defineProperty(_0x49a56a, "hasPriorityNametag", {
+                  get: () => true,
+                  set(_0x100838) {},
+                  configurable: true
+                });
+                Object.defineProperty(_0x49a56a, "canSee", {
+                  get: () => true,
+                  set(_0x337151) {},
+                  configurable: true
+                });
               }
             }
           }
         }
         _0x17466b.Lion.scene.meshes.forEach(_0x55efc4 => {
           if (_0x55efc4?.id?.includes?.("NameTag")) {
-            Object.defineProperty(_0x55efc4, "_isVisible", { get: () => true, set(_0x3c4dd0) {}, configurable: true });
-            Object.defineProperty(_0x55efc4, "renderingGroupId", { get: () => 3, set(_0x5a1f3d) {}, configurable: true });
+            Object.defineProperty(_0x55efc4, "_isVisible", {
+              get: () => true,
+              set(_0x3c4dd0) {},
+              configurable: true
+            });
+            Object.defineProperty(_0x55efc4, "renderingGroupId", {
+              get: () => 3,
+              set(_0x5a1f3d) {},
+              configurable: true
+            });
           }
         });
       }
     });
-
-    // ---- Item Spin ohne Settings ----
-    _0xaa4c31.modules["Item Spin"] = new _0x14b9fa("Item Spin", "Visuals", {
+    _0xaa4c31.modules["No FOV"] = new _0x14b9fa("No FOV", "Visuals", {
+      _baseFOV: 160 / 83.33333333333333,
+      _originalGetViewMatrix: null,
+      _camera: null,
+      settings: {
+        FOV: {
+          type: "slider",
+          min: 60,
+          max: 160,
+          step: 1,
+          value: 160,
+          onChange: function (_0x4e0b79) {
+            _0xaa4c31.modules["No FOV"]._baseFOV = _0x4e0b79 / 83.33333333333333;
+          }
+        }
+      },
+      onEnable: function () {
+        this._baseFOV = this.settings.FOV.value / 83.33333333333333;
+        this._hookViewMatrix();
+      },
+      _hookViewMatrix: function () {
+        if (!_0x17466b.Lion?.scene?.activeCamera) {
+          setTimeout(() => this._hookViewMatrix(), 100);
+          return;
+        }
+        this._camera = _0x17466b.Lion.scene.activeCamera;
+        if (!this._originalGetViewMatrix) {
+          this._originalGetViewMatrix = this._camera._getViewMatrix;
+        }
+        const _0x40a4e4 = this;
+        this._camera._getViewMatrix = function () {
+          this.fov = _0x40a4e4._baseFOV;
+          return _0x40a4e4._originalGetViewMatrix.call(this);
+        };
+        this._camera.fov = this._baseFOV;
+      },
+      onTick: function () {
+        if (!this.enabled) {
+          return;
+        }
+        if (_0x17466b.Lion?.scene?.activeCamera !== this._camera) {
+          this._hookViewMatrix();
+        }
+        if (this._camera) {
+          this._camera.fov = this._baseFOV;
+        }
+      },
+      onDisable: function () {
+        if (this._camera && this._originalGetViewMatrix) {
+          this._camera._getViewMatrix = this._originalGetViewMatrix;
+          this._camera.fov = 1;
+        }
+        this._camera = null;
+        this._originalGetViewMatrix = null;
+      }
+    });
+    _0xaa4c31.modules["Player Coordinates"] = new _0x14b9fa("Player Coordinates", "Visuals", {
+      onEnable: function () {
+        this.setInterval(() => {
+          if (!_0x17466b.bloxd?.entityNames) {
+            return;
+          }
+          const _0x471646 = _0x3b2d5e.playerList;
+          _0x471646.forEach(_0x2ae2d2 => {
+            const _0x319ef7 = _0x17466b.bloxd.entityNames[_0x2ae2d2];
+            if (!_0x319ef7) {
+              return;
+            }
+            const _0x205fbe = _0x3b2d5e.getPosition(_0x2ae2d2);
+            if (!_0x205fbe) {
+              return;
+            }
+            let _0x8ba5d6 = _0x319ef7.entityName;
+            if (_0x8ba5d6.includes(" (")) {
+              _0x8ba5d6 = _0x8ba5d6.split(" (")[0];
+            }
+            _0x319ef7.entityName = _0x8ba5d6 + " (" + Math.floor(_0x205fbe[0]) + ", " + Math.floor(_0x205fbe[1]) + ", " + Math.floor(_0x205fbe[2]) + ")";
+          });
+        }, 100);
+      },
+      onDisable: function () {
+        if (!_0x17466b.bloxd?.entityNames) {
+          return;
+        }
+        _0x3b2d5e.playerList.forEach(_0x3d2ddd => {
+          const _0x5d01ba = _0x17466b.bloxd.entityNames[_0x3d2ddd];
+          if (_0x5d01ba && _0x5d01ba.entityName.includes(" (")) {
+            _0x5d01ba.entityName = _0x5d01ba.entityName.split(" (")[0];
+          }
+        });
+      }
+    });
+    _0xaa4c31.modules["Night Mode"] = new _0x14b9fa("Night Mode", "Visuals", {
+      _origClearColor: null,
+      _skyboxMesh: null,
+      _findSkybox: function () {
+        if (!_0x17466b.noa) {
+          return null;
+        }
+        for (let _0x1afde0 = 0; _0x1afde0 < 10000; _0x1afde0++) {
+          try {
+            const _0x49d12b = _0x17466b.noa.entities.getState(_0x1afde0, "mesh");
+            if (_0x49d12b && _0x49d12b.mesh && (_0x49d12b.mesh.id === "skyBox" || _0x49d12b.mesh.name === "skyBox" || _0x49d12b.mesh.id && _0x49d12b.mesh.id.toLowerCase().includes("sky"))) {
+              return _0x49d12b.mesh;
+            }
+          } catch (_0x2d70be) {}
+        }
+        try {
+          const _0x11cf87 = _0x9439c6.values(_0x17466b.rendering);
+          if (_0x11cf87) {
+            const _0xfe1821 = _0x11cf87.find(_0x51151a => _0x51151a && _0x51151a.meshes && Array.isArray(_0x51151a.meshes));
+            if (_0xfe1821) {
+              const _0x230185 = _0xfe1821.meshes.find(_0x49d457 => _0x49d457 && _0x49d457.name && _0x49d457.name.toLowerCase().includes("sky"));
+              if (_0x230185) {
+                return _0x230185;
+              }
+            }
+          }
+        } catch (_0x48ed07) {}
+        return null;
+      },
+      onEnable: function () {
+        this._origClearColor = null;
+        this._skyboxMesh = null;
+      },
+      onTick: function () {
+        try {
+          const _0x2383a2 = _0x17466b.noa?.rendering?.getScene ? _0x17466b.noa.rendering.getScene() : _0x17466b.noa?.rendering?.scene;
+          if (_0x2383a2) {
+            if (!this._origClearColor && _0x2383a2.clearColor) {
+              this._origClearColor = {
+                r: _0x2383a2.clearColor.r,
+                g: _0x2383a2.clearColor.g,
+                b: _0x2383a2.clearColor.b
+              };
+            }
+            if (_0x2383a2.clearColor) {
+              _0x2383a2.clearColor.r = 0.05;
+              _0x2383a2.clearColor.g = 0.05;
+              _0x2383a2.clearColor.b = 0.1;
+            }
+            if (_0x2383a2.fogMode !== undefined) {
+              _0x2383a2.fogMode = 0;
+            }
+          }
+          this._skyboxMesh = this._findSkybox();
+          if (this._skyboxMesh) {
+            this._skyboxMesh.isVisible = false;
+          }
+        } catch (_0x4a8597) {}
+      },
+      onDisable: function () {
+        try {
+          const _0x207232 = _0x17466b.noa?.rendering?.getScene ? _0x17466b.noa.rendering.getScene() : _0x17466b.noa?.rendering?.scene;
+          if (_0x207232 && this._origClearColor && _0x207232.clearColor) {
+            _0x207232.clearColor.r = this._origClearColor.r;
+            _0x207232.clearColor.g = this._origClearColor.g;
+            _0x207232.clearColor.b = this._origClearColor.b;
+          }
+          if (this._skyboxMesh) {
+            this._skyboxMesh.isVisible = true;
+            this._skyboxMesh = null;
+          }
+          this._origClearColor = null;
+        } catch (_0x2c21cb) {}
+      }
+    });
+    _0xaa4c31.modules.Animation = new _0x14b9fa("Animation", "Visuals", {
       originalSetFirstPersonMeshPosition: null,
       onEnable: function () {
+        const _0x3ae203 = _0x3b2d5e.getPlayerEntity();
+        if (!_0x3ae203?._standardItem) {
+          return;
+        }
+        const _0x1fda0d = Object.getPrototypeOf(_0x3ae203._standardItem);
+        if (!_0x1fda0d || !_0x1fda0d.setFirstPersonMeshPosition) {
+          return;
+        }
+        this.originalSetFirstPersonMeshPosition = _0x1fda0d.setFirstPersonMeshPosition;
+        const _0x3d01d6 = this;
+        _0x1fda0d.setFirstPersonMeshPosition = function (_0xf45922) {
+          if (_0x3d01d6.enabled) {
+            const _0x266e39 = this.firstPersonMesh;
+            const _0x56c07f = this.heldItemState;
+            if (!_0x266e39 || !_0x56c07f) {
+              return;
+            }
+            const _0x2574ab = _0x266e39.position.constructor;
+            const _0x3a9b8e = 0.23 + this.firstPersonPosOffset.x;
+            const _0x3c92ec = -0.2 + this.firstPersonPosOffset.y;
+            const _0x48933d = 0.3 + this.firstPersonPosOffset.z;
+            const _0x1096fe = new _0x2574ab(0.4, 0.7, 0.3).add(this.firstPersonRotation);
+            const _0x25c99d = _0xf45922 - _0x56c07f._lastSwingStart;
+            const _0x533cf8 = _0x56c07f.swingDuration;
+            if (_0x25c99d < _0x533cf8) {
+              const _0x5cb0b5 = Math.sin(Math.pow(_0x25c99d / _0x533cf8, 0.35) * Math.PI);
+              const _0x1d8dc8 = 0.26;
+              const _0x1b8967 = 1.07;
+              const _0x449544 = _0x5cb0b5 * -0.3;
+              const _0x372ec9 = _0x5cb0b5 * -0.4;
+              const _0x489751 = _0x5cb0b5 * 0.72;
+              _0x266e39.rotation = new _0x2574ab(_0x1096fe.x + _0x449544, _0x1096fe.y + _0x372ec9, _0x1096fe.z + _0x489751);
+              const _0x4f5ca6 = (Math.sin(_0x1096fe.z + _0x489751 + _0x1b8967) - Math.sin(_0x1096fe.z + _0x1b8967)) * _0x1d8dc8;
+              const _0x4c1f2e = (Math.cos(_0x1096fe.z + _0x489751 + _0x1b8967) - Math.cos(_0x1096fe.z + _0x1b8967)) * _0x1d8dc8;
+              _0x266e39.position.x = _0x3a9b8e - _0x4f5ca6;
+              _0x266e39.position.y = _0x3c92ec + _0x4c1f2e;
+              _0x266e39.position.z = _0x48933d;
+            } else {
+              _0x266e39.rotation = _0x1096fe;
+              _0x266e39.position = new _0x2574ab(_0x3a9b8e, _0x3c92ec, _0x48933d);
+            }
+            if (this.typeObj.type === "CubeBlock" || this.typeObj.type === "SlabBlock") {
+              _0x266e39.rotation.z = 0;
+            }
+          } else {
+            _0x3d01d6.originalSetFirstPersonMeshPosition.call(this, _0xf45922);
+          }
+        };
+      },
+      onDisable: function () {
+        const _0x23d8c2 = _0x3b2d5e.getPlayerEntity();
+        if (this.originalSetFirstPersonMeshPosition && _0x23d8c2?._standardItem) {
+          const _0x51b377 = Object.getPrototypeOf(_0x23d8c2._standardItem);
+          if (_0x51b377) {
+            _0x51b377.setFirstPersonMeshPosition = this.originalSetFirstPersonMeshPosition;
+          }
+        }
+        this.originalSetFirstPersonMeshPosition = null;
+      }
+    });
+    _0xaa4c31.modules["Item Spin"] = new _0x14b9fa("Item Spin", "Visuals", {
+      originalSetFirstPersonMeshPosition: null,
+      settings: {},
+      onEnable: function () {
         const _0x31835f = _0x3b2d5e.getPlayerEntity();
-        if (!_0x31835f?._standardItem) return;
+        if (!_0x31835f?._standardItem) {
+          return;
+        }
         const _0x5ea2ac = Object.getPrototypeOf(_0x31835f._standardItem);
-        if (!_0x5ea2ac || !_0x5ea2ac.setFirstPersonMeshPosition) return;
+        if (!_0x5ea2ac || !_0x5ea2ac.setFirstPersonMeshPosition) {
+          return;
+        }
         this.originalSetFirstPersonMeshPosition = _0x5ea2ac.setFirstPersonMeshPosition;
         const _0x2c10b3 = this;
         _0x5ea2ac.setFirstPersonMeshPosition = function (_0x3a67fc) {
           _0x2c10b3.originalSetFirstPersonMeshPosition.call(this, _0x3a67fc);
           if (_0x2c10b3.enabled) {
             const _0x3c3751 = this.firstPersonMesh;
-            if (!_0x3c3751) return;
+            if (!_0x3c3751) {
+              return;
+            }
+            const _0x5b08aa = 1.5;
             const _0x43f76a = performance.now() / 1000;
-            const _0x3f263a = _0x43f76a * 2 * Math.PI;
-            const _0x1cb415 = Math.sin(_0x43f76a * 7) * 0.8;
-            const _0x136517 = Math.cos(_0x43f76a * 7.5) * 0.4;
-            const _0x1993c3 = Math.sin(_0x43f76a * 7.7) * 0.2;
-            const _0x4ab07b = Math.cos(_0x43f76a * 7.1) * 0.2;
+            const _0x3f263a = _0x43f76a * 2 * Math.PI * _0x5b08aa;
+            const _0x1cb415 = Math.sin(_0x43f76a * 7 * _0x5b08aa) * 0.8;
+            const _0x136517 = Math.cos(_0x43f76a * 7.5 * _0x5b08aa) * 0.4;
+            const _0x1993c3 = Math.sin(_0x43f76a * 7.7 * _0x5b08aa) * 0.2;
+            const _0x4ab07b = Math.cos(_0x43f76a * 7.1 * _0x5b08aa) * 0.2;
             _0x3c3751.rotation.x = _0x1cb415 + _0x1993c3;
             _0x3c3751.rotation.y = _0x3f263a;
             _0x3c3751.rotation.z = _0x136517 + _0x4ab07b;
           }
         };
         this.setLoop(() => {
-          if (!this.enabled) return;
+          if (!this.enabled) {
+            return;
+          }
           const _0x2f07bf = _0x3b2d5e.getPlayerEntity();
-          if (!_0x2f07bf?._standardItem) return;
+          if (!_0x2f07bf?._standardItem) {
+            return;
+          }
           const _0x585534 = _0x2f07bf._standardItem.firstPersonMesh;
-          if (!_0x585534) return;
-          const _0x43f76a = performance.now() / 1000;
-          const _0x3f263a = _0x43f76a * 2 * Math.PI;
-          const _0x3ea64a = Math.sin(_0x43f76a * 3) * 0.8;
-          const _0xcd37a7 = Math.cos(_0x43f76a * 2.5) * 0.4;
-          const _0x4240c2 = Math.sin(_0x43f76a * 1.7) * 0.2;
-          const _0x14e9fe = Math.cos(_0x43f76a * 2.1) * 0.2;
+          if (!_0x585534) {
+            return;
+          }
+          const _0x1c3eaa = 1.5;
+          const _0x341d4c = performance.now() / 1000;
+          const _0x5d33f1 = _0x341d4c * 2 * Math.PI * _0x1c3eaa;
+          const _0x3ea64a = Math.sin(_0x341d4c * 3 * _0x1c3eaa) * 0.8;
+          const _0xcd37a7 = Math.cos(_0x341d4c * 2.5 * _0x1c3eaa) * 0.4;
+          const _0x4240c2 = Math.sin(_0x341d4c * 1.7 * _0x1c3eaa) * 0.2;
+          const _0x14e9fe = Math.cos(_0x341d4c * 2.1 * _0x1c3eaa) * 0.2;
           _0x585534.rotation.x = _0x3ea64a + _0x4240c2;
-          _0x585534.rotation.y = _0x3f263a;
+          _0x585534.rotation.y = _0x5d33f1;
           _0x585534.rotation.z = _0xcd37a7 + _0x14e9fe;
         });
       },
@@ -2623,11 +2933,619 @@
         this.originalSetFirstPersonMeshPosition = null;
       }
     });
-
-    // ---- Theme entfernt ----
-    // ---- Loot Chests entfernt ----
-
-    // ---- Weitere Module (World, HUD) bleiben (Inventory Manager etc.) ----
+    _0xaa4c31.modules.Derp = new _0x14b9fa("Derp", "Visuals", {
+      settings: {
+        Speed: {
+          type: "slider",
+          min: 0.1,
+          max: 10,
+          step: 0.1,
+          value: 2
+        },
+        pitch: {
+          type: "checkbox",
+          value: false
+        },
+        heading: {
+          type: "checkbox",
+          value: false
+        }
+      },
+      _rot: 0,
+      _hooked: false,
+      _nodes: null,
+      _meshFallback: null,
+      _findNodes: function () {
+        try {
+          const _0x355e84 = _0x17466b.noa;
+          if (!_0x355e84) {
+            return null;
+          }
+          for (const _0x374dfe of _0x9439c6.values(_0x355e84)) {
+            if (_0x374dfe && typeof _0x374dfe.getObjectData === "function") {
+              const _0x37837f = _0x374dfe.getObjectData(1);
+              if (_0x37837f && _0x37837f.nodes) {
+                return _0x37837f.nodes;
+              }
+            }
+            if (_0x374dfe && typeof _0x374dfe === "object") {
+              for (const _0x1ef406 of _0x9439c6.values(_0x374dfe)) {
+                if (_0x1ef406 && typeof _0x1ef406.getObjectData === "function") {
+                  const _0x2b3e9e = _0x1ef406.getObjectData(1);
+                  if (_0x2b3e9e && _0x2b3e9e.nodes) {
+                    return _0x2b3e9e.nodes;
+                  }
+                }
+              }
+            }
+          }
+        } catch (_0x2a9027) {}
+        return null;
+      },
+      _getPlayerMesh: function () {
+        try {
+          const _0x44bf95 = _0x17466b.noa?.entities?.getState(1, "mesh");
+          if (_0x44bf95 && _0x44bf95.mesh) {
+            return _0x44bf95.mesh;
+          }
+        } catch (_0x13d4fe) {}
+        return null;
+      },
+      _hook: function (_0x5479cd, _0x49a0ff, _0x3ba156) {
+        if (!_0x5479cd || _0x5479cd["_derp_" + _0x49a0ff]) {
+          return;
+        }
+        try {
+          let _0x2fec99 = _0x5479cd[_0x49a0ff];
+          const _0x404fd9 = this;
+          Object.defineProperty(_0x5479cd, _0x49a0ff, {
+            configurable: true,
+            get: function () {
+              if (_0x404fd9.enabled) {
+                const _0x2b089b = _0x3ba156.call(_0x404fd9);
+                if (_0x2b089b !== null) {
+                  return _0x2b089b;
+                } else {
+                  return _0x2fec99;
+                }
+              }
+              return _0x2fec99;
+            },
+            set: function (_0x376e6a) {
+              _0x2fec99 = _0x376e6a;
+            }
+          });
+          _0x5479cd["_derp_" + _0x49a0ff] = true;
+        } catch (_0x5723eb) {}
+      },
+      _fakeY: function () {
+        if (this.settings.heading.value) {
+          return this._rot + Math.PI;
+        } else {
+          return null;
+        }
+      },
+      _fakeX: function () {
+        if (this.settings.pitch.value) {
+          return this._rot;
+        } else {
+          return null;
+        }
+      },
+      onEnable: function () {
+        this._rot = 0;
+        this._hooked = false;
+        this._nodes = this._findNodes();
+        if (this._nodes) {
+          if (this._nodes[0] && this._nodes[0].rotationEuler) {
+            this._hook(this._nodes[0].rotationEuler, "_y", this._fakeY);
+          }
+          if (this._nodes[5] && this._nodes[5].rotationEuler) {
+            this._hook(this._nodes[5].rotationEuler, "_x", this._fakeX);
+          }
+          this._hooked = true;
+        }
+        if (!this._hooked) {
+          this._meshFallback = this._getPlayerMesh();
+        }
+      },
+      onTick: function () {
+        if (!this.enabled) {
+          return;
+        }
+        const _0x44fb7f = this.settings.Speed.value;
+        this._rot = (this._rot + _0x44fb7f * 0.05) % (Math.PI * 2);
+        if (!this._hooked) {
+          this._nodes = this._findNodes();
+          if (this._nodes) {
+            if (this._nodes[0] && this._nodes[0].rotationEuler) {
+              this._hook(this._nodes[0].rotationEuler, "_y", this._fakeY);
+            }
+            if (this._nodes[5] && this._nodes[5].rotationEuler) {
+              this._hook(this._nodes[5].rotationEuler, "_x", this._fakeX);
+            }
+            this._hooked = true;
+          }
+          if (!this._hooked && !this._meshFallback) {
+            this._meshFallback = this._getPlayerMesh();
+          }
+        }
+        if (!this._hooked && this._meshFallback) {
+          if (this.settings.heading.value) {
+            this._meshFallback.rotation.y = this._rot + Math.PI;
+          }
+          if (this.settings.pitch.value) {
+            this._meshFallback.rotation.x = this._rot;
+          }
+        }
+      },
+      onDisable: function () {
+        this._rot = 0;
+        this._hooked = false;
+        this._nodes = null;
+        this._meshFallback = null;
+      }
+    });
+    _0xaa4c31.modules["X-Ray"] = new _0x14b9fa("X-Ray", "Visuals", {
+      onEnable: () => {
+        if (!_0x21074e) {
+          _0x21074e = setInterval(() => _0x26b3d0(true), 300);
+          _0x26b3d0(true);
+        }
+      },
+      onDisable: () => {
+        if (_0x21074e) {
+          clearInterval(_0x21074e);
+          _0x21074e = null;
+          _0x26b3d0(false);
+        }
+      }
+    });
+    _0xaa4c31.modules["Target HUD"] = new _0x14b9fa("Target HUD", "Visuals", {
+      hudEl: null,
+      nameEl: null,
+      barEl: null,
+      hpTextEl: null,
+      onEnable: function () {
+        if (!this.hudEl) {
+          this.hudEl = document.createElement("div");
+          this.hudEl.className = "bone-target-hud";
+          this.hudEl.innerHTML = "<div class=\"bone-target-hud-inner\"><div class=\"bone-target-hud-name\"></div><div class=\"bone-target-hud-bar-bg\"><div class=\"bone-target-hud-bar\"></div></div><div class=\"bone-target-hud-hp-text\"></div></div>";
+          _0x4f9147.shadowRoot.appendChild(this.hudEl);
+          this.nameEl = this.hudEl.querySelector(".bone-target-hud-name");
+          this.barEl = this.hudEl.querySelector(".bone-target-hud-bar");
+          this.hpTextEl = this.hudEl.querySelector(".bone-target-hud-hp-text");
+        }
+      },
+      onDisable: function () {
+        if (this.hudEl) {
+          this.hudEl.style.display = "none";
+        }
+      },
+      onTick: function () {
+        if (!this.hudEl) {
+          return;
+        }
+        const _0x16c6e0 = _0x3b2d5e.getPosition(1);
+        if (!_0x16c6e0) {
+          this.hudEl.style.display = "none";
+          return;
+        }
+        const _0x51814a = _0x3b2d5e.playerList;
+        let _0x8eaba = null;
+        let _0x3bd5a7 = Infinity;
+        for (const _0x3773eb of _0x51814a) {
+          const _0x21a0a8 = _0x17466b.noa.entities.getState(_0x3773eb, "genericLifeformState");
+          if (_0x21a0a8 && !_0x21a0a8.isAlive) {
+            continue;
+          }
+          const _0x35af61 = _0x3b2d5e.getPosition(_0x3773eb);
+          if (!_0x35af61) {
+            continue;
+          }
+          const _0x226f9d = Math.hypot(_0x35af61[0] - _0x16c6e0[0], _0x35af61[1] - _0x16c6e0[1], _0x35af61[2] - _0x16c6e0[2]);
+          if (_0x226f9d < _0x3bd5a7 && _0x226f9d < 30) {
+            _0x3bd5a7 = _0x226f9d;
+            _0x8eaba = {
+              id: _0x3773eb,
+              pos: _0x35af61
+            };
+          }
+        }
+        if (!_0x8eaba) {
+          this.hudEl.style.display = "none";
+          return;
+        }
+        const _0x4ad027 = _0x3b2d5e.worldToScreen([_0x8eaba.pos[0], _0x8eaba.pos[1] + 1, _0x8eaba.pos[2]]);
+        if (!_0x4ad027) {
+          this.hudEl.style.display = "none";
+          return;
+        }
+        const _0x286123 = _0x5ef4bb(_0x8eaba.id);
+        const _0x1363d5 = Math.max(0, Math.min(100, _0x286123 * 100));
+        const _0xa290cf = _0xcf0b59(_0x8eaba.id);
+        let _0x1118ba = _0x1363d5 < 25 ? "#962D2D" : _0x1363d5 < 50 ? "#D99A48" : "#36A37A";
+        this.nameEl.textContent = _0xa290cf;
+        this.barEl.style.width = _0x1363d5 + "%";
+        this.barEl.style.backgroundColor = _0x1118ba;
+        this.hpTextEl.textContent = Math.round(_0x1363d5) + "Hp";
+        this.hudEl.style.display = "block";
+        this.hudEl.style.left = _0x4ad027.x + 30 + "px";
+        this.hudEl.style.top = _0x4ad027.y - 20 + "px";
+      }
+    });
+    _0xaa4c31.modules["Item Range"] = new _0x14b9fa("Item Range", "World", {
+      originalAABB: null,
+      aabbKey: null,
+      onEnable: function () {
+        const _0x40c3ec = Object.getPrototypeOf(_0x17466b.noa.entities);
+        this.aabbKey = Object.getOwnPropertyNames(_0x40c3ec).find(_0xe07dfc => _0xe07dfc !== "constructor" && ("" + _0x40c3ec[_0xe07dfc]).includes(".base"));
+        if (this.aabbKey) {
+          this.originalAABB = _0x40c3ec[this.aabbKey];
+          const _0x5b6f85 = this;
+          _0x17466b.noa.entities[this.aabbKey] = function (_0x593967, _0x11296d) {
+            const _0x13ec38 = 5;
+            const _0x1c0acd = Object.assign({}, _0x593967);
+            _0x1c0acd.base = _0x593967.base.map(_0x2d0198 => _0x2d0198 - _0x13ec38);
+            _0x1c0acd.max = _0x593967.max.map(_0x4f1090 => _0x4f1090 + _0x13ec38);
+            return _0x5b6f85.originalAABB.call(this, _0x1c0acd, _0x11296d);
+          };
+        }
+      },
+      onDisable: function () {
+        if (this.aabbKey && this.originalAABB) {
+          const _0x40391e = Object.getPrototypeOf(_0x17466b.noa.entities);
+          _0x40391e[this.aabbKey] = this.originalAABB;
+          delete _0x17466b.noa.entities[this.aabbKey];
+        }
+        this.originalAABB = null;
+        this.aabbKey = null;
+      }
+    });
+    _0xaa4c31.modules["Fast Place"] = new _0x14b9fa("Fast Place", "World", {
+      lastPlace: 0,
+      settings: {
+        Delay: {
+          type: "slider",
+          min: 0,
+          max: 100,
+          step: 10,
+          value: 0
+        }
+      },
+      onTick: function () {
+        if (!document.isRightMouseDown) {
+          return;
+        }
+        const _0x4f9ba2 = Date.now();
+        if (_0x4f9ba2 - this.lastPlace >= this.settings.Delay.value) {
+          _0x3b2d5e.getPlayerEntity()?._blockItem?.placeBlock?.();
+          this.lastPlace = _0x4f9ba2;
+        }
+      }
+    });
+    _0xaa4c31.modules["Fast Break"] = new _0x14b9fa("Fast Break", "World", {
+      originalHardness: {},
+      applied: false,
+      onEnable: function () {
+        this.setInterval(() => {
+          if (this.applied) {
+            return;
+          }
+          const _0x310138 = _0x9439c6.values(_0xe6c69a.m).find(_0x27d5d8 => _0x27d5d8.toString().includes("Gun:class"));
+          if (!_0x310138) {
+            return;
+          }
+          const _0x23d1aa = Object.keys(_0xe6c69a.m).find(_0x5dc92b => _0xe6c69a.m[_0x5dc92b] === _0x310138);
+          const _0x168212 = Object.values(Object.values(_0xe6c69a(_0x23d1aa)).find(_0x55d84a => typeof _0x55d84a === "object"));
+          if (Object.keys(this.originalHardness).length === 0) {
+            _0x168212.forEach((_0x53493a, _0x24a1d7) => {
+              if (_0x53493a?.ttb) {
+                this.originalHardness[_0x24a1d7] = _0x53493a.ttb;
+              }
+            });
+          }
+          _0x168212.forEach((_0x15acca, _0x3ce789) => {
+            if (_0x15acca?.ttb && this.originalHardness[_0x3ce789]) {
+              _0x15acca.ttb = this.originalHardness[_0x3ce789] / 2;
+            }
+          });
+          this.applied = true;
+        }, 500);
+      },
+      onDisable: function () {
+        if (this.applied) {
+          const _0x1c80a7 = _0x9439c6.values(_0xe6c69a.m).find(_0x19efcb => _0x19efcb.toString().includes("Gun:class"));
+          if (_0x1c80a7) {
+            const _0x2e2d1b = Object.keys(_0xe6c69a.m).find(_0x3cbf91 => _0xe6c69a.m[_0x3cbf91] === _0x1c80a7);
+            const _0x291f08 = Object.values(Object.values(_0xe6c69a(_0x2e2d1b)).find(_0x3538b1 => typeof _0x3538b1 === "object"));
+            _0x291f08.forEach((_0x288790, _0x183fd0) => {
+              if (_0x288790?.ttb && this.originalHardness[_0x183fd0]) {
+                _0x288790.ttb = this.originalHardness[_0x183fd0];
+              }
+            });
+          }
+        }
+        this.originalHardness = {};
+        this.applied = false;
+      }
+    });
+    _0xaa4c31.modules["Bed Aura"] = new _0x14b9fa("Bed Aura", "World", {
+      bedPos: null,
+      pathCache: [],
+      isBreaking: false,
+      onEnable() {
+        this.setInterval(() => this.onTick(), 50);
+      },
+      onDisable() {
+        this.isBreaking = false;
+        this.pathCache = [];
+        this.bedPos = null;
+      },
+      onTick() {
+        if (!_0x17466b.injected || this.isBreaking) {
+          return;
+        }
+        const _0x1ee3a2 = _0x3b2d5e.getPlayerEntity();
+        const _0x42ad17 = _0x1ee3a2?._blockItem?.breakingItem;
+        if (!_0x42ad17 || _0x42ad17.attemptingToBreak) {
+          return;
+        }
+        const _0x1e8ab1 = _0x3b2d5e.getPosition(1);
+        if (!_0x1e8ab1) {
+          return;
+        }
+        if (this.bedPos) {
+          const _0x105574 = _0x3b2d5e.getBlockID(this.bedPos[0], this.bedPos[1], this.bedPos[2]);
+          if (!_0x3b2d5e.getBlockName(_0x105574)?.toLowerCase().includes("bed")) {
+            this.bedPos = null;
+            this.pathCache = [];
+          }
+        }
+        if (!this.bedPos) {
+          const _0x38905c = 6;
+          const _0x31d55b = Math.floor(_0x1e8ab1[0]);
+          const _0x4e7f09 = Math.floor(_0x1e8ab1[1] + 0.5);
+          const _0x39d0ec = Math.floor(_0x1e8ab1[2]);
+          for (let _0x1ac645 = -_0x38905c; _0x1ac645 <= _0x38905c; _0x1ac645++) {
+            for (let _0x5ed42a = -_0x38905c; _0x5ed42a <= _0x38905c; _0x5ed42a++) {
+              for (let _0x4a77c8 = -_0x38905c; _0x4a77c8 <= _0x38905c; _0x4a77c8++) {
+                if (_0x1ac645 * _0x1ac645 + _0x5ed42a * _0x5ed42a + _0x4a77c8 * _0x4a77c8 > _0x38905c * _0x38905c) {
+                  continue;
+                }
+                const _0x448efa = _0x31d55b + _0x1ac645;
+                const _0x21c30f = _0x4e7f09 + _0x5ed42a;
+                const _0x354965 = _0x39d0ec + _0x4a77c8;
+                const _0x3da8d0 = _0x3b2d5e.getBlockID(_0x448efa, _0x21c30f, _0x354965);
+                if (_0x3b2d5e.getBlockName(_0x3da8d0)?.toLowerCase().includes("bed")) {
+                  this.bedPos = [_0x448efa, _0x21c30f, _0x354965];
+                  this.pathCache = _0x3b2d5e.lineOfSight([_0x31d55b, _0x4e7f09, _0x39d0ec], this.bedPos);
+                  break;
+                }
+              }
+            }
+          }
+        }
+        if (!this.bedPos || this.pathCache.length === 0) {
+          return;
+        }
+        let _0x44c190 = null;
+        for (const _0x34cb54 of this.pathCache) {
+          const _0x35afbb = _0x3b2d5e.getBlockID(_0x34cb54[0], _0x34cb54[1], _0x34cb54[2]);
+          if (_0x35afbb !== 0) {
+            const _0x294942 = Math.hypot(_0x1e8ab1[0] - (_0x34cb54[0] + 0.5), _0x1e8ab1[1] - (_0x34cb54[1] + 0.5), _0x1e8ab1[2] - (_0x34cb54[2] + 0.5));
+            if (_0x294942 <= 7) {
+              _0x44c190 = _0x34cb54;
+              break;
+            }
+          }
+        }
+        if (!_0x44c190) {
+          this.bedPos = null;
+          this.pathCache = [];
+          return;
+        }
+        this.breakBlock(_0x44c190[0], _0x44c190[1], _0x44c190[2]);
+      },
+      breakBlock(_0x50a199, _0x4ec2da, _0x582c79) {
+        const _0x15d2f0 = [Math.floor(_0x50a199), Math.floor(_0x4ec2da), Math.floor(_0x582c79)];
+        const _0x312563 = _0x3b2d5e.getPlayerEntity();
+        const _0x261358 = _0x312563?._blockItem?.breakingItem;
+        const _0x55be4e = Object.values(_0x312563?._blockItem || {})[0];
+        if (!_0x261358 || !_0x55be4e) {
+          return;
+        }
+        this.isBreaking = true;
+        const _0x23c013 = Object.keys(_0x55be4e)[25];
+        const _0xfcc060 = _0x55be4e[_0x23c013];
+        const _0x23caa3 = _0x261358.targetedPosition;
+        if (!_0x23c013) {
+          this.isBreaking = false;
+          return;
+        }
+        _0x55be4e[_0x23c013] = {
+          position: new Float32Array(_0x15d2f0),
+          normal: [0, 1, 0]
+        };
+        _0x261358.targetedPosition = null;
+        try {
+          _0x261358.breakBlock(Date.now());
+        } catch (_0x416241) {}
+        const _0x209d12 = {
+          get: () => ({
+            position: new Float32Array(_0x15d2f0),
+            normal: [0, 1, 0]
+          }),
+          set: () => {},
+          configurable: true
+        };
+        Object.defineProperty(_0x55be4e, _0x23c013, _0x209d12);
+        Object.defineProperty(_0x261358, "targetedPosition", {
+          get: () => _0x15d2f0,
+          set: () => {},
+          configurable: true
+        });
+        _0x261358.targetedStartTime = _0x261358.anyBreakingStartTime = Date.now();
+        _0x261358.attemptingToBreak = true;
+        const _0x4dc9d1 = setInterval(() => {
+          const _0x153b87 = _0x3b2d5e.getBlockID(_0x15d2f0[0], _0x15d2f0[1], _0x15d2f0[2]);
+          if (!this.enabled || _0x153b87 === 0) {
+            clearInterval(_0x4dc9d1);
+            this.resetBreaking(_0x261358, _0x55be4e, _0x23c013, _0xfcc060, _0x23caa3);
+            return;
+          }
+          try {
+            if (_0x261358.breakBlock(Date.now()) === false) {
+              clearInterval(_0x4dc9d1);
+              this.resetBreaking(_0x261358, _0x55be4e, _0x23c013, _0xfcc060, _0x23caa3);
+            }
+          } catch (_0x3a8fd1) {
+            clearInterval(_0x4dc9d1);
+            this.resetBreaking(_0x261358, _0x55be4e, _0x23c013, _0xfcc060, _0x23caa3);
+          }
+        }, 16);
+      },
+      resetBreaking(_0x499b7a, _0xc6d039, _0x2493c8, _0x5dfb5e, _0x37fe70) {
+        Object.defineProperty(_0xc6d039, _0x2493c8, {
+          value: _0x5dfb5e,
+          writable: true,
+          configurable: true,
+          enumerable: true
+        });
+        Object.defineProperty(_0x499b7a, "targetedPosition", {
+          value: _0x37fe70,
+          writable: true,
+          configurable: true,
+          enumerable: true
+        });
+        try {
+          _0x499b7a.resetTargetedBlock(Date.now());
+        } catch (_0x2a1597) {}
+        _0x499b7a.attemptingToBreak = false;
+        this.isBreaking = false;
+      }
+    });
+    _0xaa4c31.modules["Glider Boost"] = new _0x14b9fa("Glider Boost", "Movement", {
+      settings: {
+        "Glider Slot": {
+          type: "slider",
+          min: 1,
+          max: 9,
+          step: 1,
+          value: 1
+        },
+        "Other Slot": {
+          type: "slider",
+          min: 1,
+          max: 9,
+          step: 1,
+          value: 2
+        },
+        "Delay (ms)": {
+          type: "slider",
+          min: 10,
+          max: 500,
+          step: 5,
+          value: 50
+        }
+      },
+      _interval: null,
+      _current: "1",
+      onEnable: function () {
+        const _0x53f2d2 = String(this.settings["Glider Slot"].value);
+        const _0xf5c9ea = String(this.settings["Other Slot"].value);
+        const _0xf9cd46 = this.settings["Delay (ms)"].value;
+        this._current = _0x53f2d2;
+        this._interval = setInterval(() => {
+          const _0x4f2e8f = parseInt(this._current);
+          const _0x327619 = {
+            key: String(_0x4f2e8f),
+            code: "Digit" + _0x4f2e8f,
+            bubbles: true
+          };
+          document.dispatchEvent(new KeyboardEvent("keydown", _0x327619));
+          document.dispatchEvent(new KeyboardEvent("keyup", _0x327619));
+          this._current = this._current === _0x53f2d2 ? _0xf5c9ea : _0x53f2d2;
+        }, _0xf9cd46);
+      },
+      onDisable: function () {
+        if (this._interval) {
+          clearInterval(this._interval);
+          this._interval = null;
+        }
+      }
+    });
+    _0xaa4c31.modules["Loot Chests"] = new _0x14b9fa("Loot Chests", "World", {
+      settings: {
+        Delay: {
+          type: "slider",
+          min: 0,
+          max: 100,
+          step: 1,
+          value: 0
+        }
+      },
+      onEnable: function () {
+        this.setLoop(async () => {
+          const _0x453c66 = _0x17466b.noa.entities[_0x17466b.impKey]?.inventory?.list?.[0]?.opWrapper;
+          if (!_0x453c66) {
+            return;
+          }
+          const _0x1f9508 = Object.values(_0x453c66).find(_0x36404f => _0x36404f?.items && _0x36404f.numSlots && _0x36404f !== _0x453c66.playerInventory);
+          const _0x2f1e79 = _0x453c66.playerInventory;
+          if (!_0x1f9508?.items || !_0x2f1e79?.items) {
+            return;
+          }
+          const _0x42ddaa = 51;
+          const _0x3f67ce = 999;
+          function _0x2089de(_0x9af82c) {
+            if (!_0x9af82c) {
+              return 0;
+            }
+            const _0x1c899c = _0x9af82c.amount;
+            if (typeof _0x1c899c === "number" && Number.isFinite(_0x1c899c)) {
+              return _0x1c899c;
+            } else {
+              return 1;
+            }
+          }
+          for (let _0x5b982b = 0; _0x5b982b < _0x1f9508.items.length; _0x5b982b++) {
+            await new Promise(_0x7dfce8 => setTimeout(_0x7dfce8, this.settings.Delay.value));
+            const _0x4862e9 = _0x1f9508.items[_0x5b982b];
+            if (_0x4862e9) {
+              if (_0x4862e9.typeObj?.stackable) {
+                let _0x3c99d4 = _0x2089de(_0x4862e9);
+                const _0x4b1e0e = _0x4862e9.name;
+                for (let _0x4088c0 = 0; _0x4088c0 < 46 && _0x3c99d4 > 0; _0x4088c0++) {
+                  const _0x2561f0 = _0x2f1e79.items[_0x4088c0];
+                  if (!_0x2561f0 || _0x2561f0.name !== _0x4b1e0e) {
+                    continue;
+                  }
+                  const _0x5d90f9 = _0x2089de(_0x2561f0);
+                  if (_0x5d90f9 >= _0x3f67ce) {
+                    continue;
+                  }
+                  const _0x1656bb = Math.min(_0x3f67ce - _0x5d90f9, _0x3c99d4);
+                  if (_0x1656bb > 0) {
+                    _0x453c66.moveItemIntoIdxsClient(_0x4088c0, _0x4088c0 + 1, _0x42ddaa + _0x5b982b, _0x1656bb);
+                    _0x3c99d4 -= _0x1656bb;
+                    if (_0x3c99d4 <= 0) {
+                      break;
+                    }
+                  }
+                }
+              }
+              for (let _0x494241 = 0; _0x494241 < 46; _0x494241++) {
+                if (!_0x2f1e79.items[_0x494241]) {
+                  _0x453c66.swapPosClient(51 + _0x5b982b, _0x494241);
+                  break;
+                }
+              }
+            }
+          }
+        });
+      }
+    });
     _0xaa4c31.modules["Inventory Manager"] = new _0x14b9fa("Inventory Manager", "World", {
       settings: {
         Delay: {
@@ -2819,11 +3737,479 @@
         this._mpqz = null;
       }
     });
-
-    // … die restlichen Module (Fast Place, Fast Break, Bed Aura, Glider Boost, New Account, OreESP, HUD Editor, Blur, Watermark, Module List, FPS/Ping, Keystrokes) bleiben unverändert –
-    // sie werden hier der Kürze halber nicht nochmals aufgeführt, sind aber im vollständigen Code enthalten.
+    _0xaa4c31.modules["New Account"] = new _0x14b9fa("New Account", "World", {
+      type: "action",
+      onEnable: function () {
+        if (window.confirm("Are you sure you want to reset the session and create a new account?")) {
+          const _0x4e2510 = document.cookie.split(";");
+          for (let _0x5e9d0a = 0; _0x5e9d0a < _0x4e2510.length; _0x5e9d0a++) {
+            const _0x4b4d54 = _0x4e2510[_0x5e9d0a];
+            const _0x5d5412 = _0x4b4d54.indexOf("=");
+            const _0x2bb010 = _0x5d5412 > -1 ? _0x4b4d54.substr(0, _0x5d5412) : _0x4b4d54;
+            document.cookie = _0x2bb010 + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+          }
+          location.reload();
+        }
+      }
+    });
+    _0xaa4c31.modules.OreESP = new _0x14b9fa("OreESP", "World", {
+      settings: {
+        Coal: {
+          type: "checkbox",
+          value: true
+        },
+        Iron: {
+          type: "checkbox",
+          value: true
+        },
+        Gold: {
+          type: "checkbox",
+          value: true
+        },
+        Diamond: {
+          type: "checkbox",
+          value: true
+        },
+        Moonstone: {
+          type: "checkbox",
+          value: true
+        },
+        Emerald: {
+          type: "checkbox",
+          value: false
+        },
+        Lapis: {
+          type: "checkbox",
+          value: false
+        }
+      },
+      _mats: null,
+      _meshes: {},
+      _processedChunks: new Set(),
+      _chunkDataField: null,
+      _lastScan: 0,
+      _createESPBox: function (_0x3b4495, _0x55a067, _0x17b74f) {
+        const _0xcaa91e = _0x17466b.Lion;
+        if (!_0xcaa91e) {
+          return null;
+        }
+        try {
+          const _0x4951f5 = _0xcaa91e.Mesh.CreateBox(_0x3b4495, 1.01, _0xcaa91e.scene);
+          _0x4951f5.position.set(_0x55a067[0], _0x55a067[1], _0x55a067[2]);
+          _0x4951f5.renderingGroupId = 2;
+          _0x4951f5.material = _0x17b74f;
+          _0x4951f5.isPickable = false;
+          const _0x404587 = _0x17466b.noa.entities.add(_0x55a067, 1, 1, _0x4951f5, null, false);
+          return {
+            mesh: _0x4951f5,
+            id: _0x404587
+          };
+        } catch (_0x21b31b) {
+          return null;
+        }
+      },
+      _scanChunks: function (_0x147317, _0xccf448, _0x50e34f) {
+        const _0x10f114 = _0x17466b.world;
+        const _0x1e3f68 = _0x17466b.impKey;
+        if (!_0x10f114 || !_0x1e3f68 || !_0x10f114[_0x1e3f68]?.hash) {
+          return;
+        }
+        const _0x3246fe = _0x10f114[_0x1e3f68].hash;
+        const _0x81fccd = _0x3b2d5e.getPosition(1);
+        if (!_0x81fccd) {
+          return;
+        }
+        const _0x2798c4 = [];
+        for (const _0x40849c in _0x3246fe) {
+          const _0x19c23c = _0x3246fe[_0x40849c];
+          if (!_0x19c23c.pos) {
+            continue;
+          }
+          const _0x401484 = Math.hypot(_0x19c23c.pos[0] - _0x81fccd[0], _0x19c23c.pos[1] - _0x81fccd[1], _0x19c23c.pos[2] - _0x81fccd[2]);
+          if (_0x401484 < 96) {
+            _0x2798c4.push({
+              chunk: _0x19c23c,
+              dist: _0x401484
+            });
+          }
+        }
+        _0x2798c4.sort((_0x2cea2b, _0x4034b7) => _0x2cea2b.dist - _0x4034b7.dist);
+        const _0x591be4 = new Set();
+        let _0x9b10c7 = 0;
+        const _0x3d2507 = _0x50e34f || 48;
+        _0x2798c4.forEach(({
+          chunk: _0x289ad3
+        }) => {
+          if (_0x9b10c7 >= _0x3d2507) {
+            return;
+          }
+          const _0x5eee91 = _0x289ad3.pos[0] + "|" + _0x289ad3.pos[1] + "|" + _0x289ad3.pos[2];
+          _0x591be4.add(_0x5eee91);
+          if (this._processedChunks.has(_0x5eee91)) {
+            return;
+          }
+          if (!this._chunkDataField) {
+            for (const _0x4da500 in _0x289ad3) {
+              if (_0x289ad3[_0x4da500]?.stride && _0x289ad3[_0x4da500]?.data) {
+                this._chunkDataField = _0x4da500;
+                break;
+              }
+            }
+          }
+          const _0x33cb52 = _0x289ad3[this._chunkDataField];
+          if (_0x33cb52?.data) {
+            this._processedChunks.add(_0x5eee91);
+            const {
+              data: _0x1db7fa,
+              stride: _0x2b1e9b
+            } = _0x33cb52;
+            const _0x1034fb = _0x289ad3.pos;
+            for (let _0x4db20b = 0; _0x4db20b < _0x1db7fa.length; _0x4db20b++) {
+              if (_0x9b10c7 >= _0x3d2507) {
+                break;
+              }
+              const _0xe37d2e = _0x1db7fa[_0x4db20b];
+              if (_0x147317.includes(_0xe37d2e)) {
+                const _0x393a57 = Math.floor(_0x4db20b / _0x2b1e9b[0]);
+                const _0x3c8ad7 = _0x4db20b % _0x2b1e9b[0];
+                const _0x4e0926 = Math.floor(_0x3c8ad7 / _0x2b1e9b[1]);
+                const _0x57afca = _0x3c8ad7 % _0x2b1e9b[1];
+                const _0x40813a = _0x1034fb[0] + _0x393a57 + 0.5;
+                const _0xaf2130 = _0x1034fb[1] + _0x4e0926 + 0.5;
+                const _0x5ffa90 = _0x1034fb[2] + _0x57afca + 0.5;
+                _0xccf448(_0xe37d2e, _0x40813a, _0xaf2130, _0x5ffa90, _0x5eee91);
+                _0x9b10c7++;
+              }
+            }
+          }
+        });
+        for (const _0x1f5acf in this._meshes) {
+          if (!_0x591be4.has(_0x1f5acf)) {
+            this._meshes[_0x1f5acf].forEach(_0x2779a5 => {
+              try {
+                _0x2779a5.mesh.dispose();
+                _0x17466b.noa.entities.deleteEntity(_0x2779a5.id);
+              } catch (_0x59aafe) {}
+            });
+            delete this._meshes[_0x1f5acf];
+            this._processedChunks.delete(_0x1f5acf);
+          }
+        }
+      },
+      onEnable: function () {
+        this._mats = null;
+        this._meshes = {};
+        this._processedChunks = new Set();
+        this._chunkDataField = null;
+        this._lastScan = 0;
+      },
+      onDisable: function () {
+        for (const _0x63ccc9 in this._meshes) {
+          this._meshes[_0x63ccc9].forEach(_0x38ce87 => {
+            try {
+              _0x38ce87.mesh.dispose();
+              _0x17466b.noa.entities.deleteEntity(_0x38ce87.id);
+            } catch (_0x1ad0d6) {}
+          });
+        }
+        this._meshes = {};
+        this._processedChunks.clear();
+      },
+      onTick: function () {
+        const _0x256676 = Date.now();
+        if (_0x256676 - this._lastScan < 1500) {
+          return;
+        }
+        this._lastScan = _0x256676;
+        const _0x433f92 = _0x17466b.Lion;
+        if (!_0x433f92) {
+          return;
+        }
+        if (!this._mats) {
+          this._mats = {
+            40: new _0x433f92.StandardMaterial("coalMat", _0x433f92.scene),
+            41: new _0x433f92.StandardMaterial("ironMat", _0x433f92.scene),
+            42: new _0x433f92.StandardMaterial("goldMat", _0x433f92.scene),
+            45: new _0x433f92.StandardMaterial("diamondMat", _0x433f92.scene),
+            465: new _0x433f92.StandardMaterial("moonstoneMat", _0x433f92.scene),
+            44: new _0x433f92.StandardMaterial("emeraldMat", _0x433f92.scene),
+            43: new _0x433f92.StandardMaterial("lapisMat", _0x433f92.scene)
+          };
+          this._mats[40].wireframe = true;
+          this._mats[40].emissiveColor = new _0x433f92.Color3(0.2, 0.2, 0.2);
+          this._mats[41].wireframe = true;
+          this._mats[41].emissiveColor = new _0x433f92.Color3(0.7, 0.7, 0.7);
+          this._mats[42].wireframe = true;
+          this._mats[42].emissiveColor = new _0x433f92.Color3(1, 0.84, 0);
+          this._mats[45].wireframe = true;
+          this._mats[45].emissiveColor = new _0x433f92.Color3(0, 1, 1);
+          this._mats[465].wireframe = true;
+          this._mats[465].emissiveColor = new _0x433f92.Color3(0.7, 0.5, 1);
+          this._mats[44].wireframe = true;
+          this._mats[44].emissiveColor = new _0x433f92.Color3(0, 1, 0.4);
+          this._mats[43].wireframe = true;
+          this._mats[43].emissiveColor = new _0x433f92.Color3(0, 0, 1);
+        }
+        const _0x336ea5 = [];
+        if (this.settings.Coal.value) {
+          _0x336ea5.push(40);
+        }
+        if (this.settings.Iron.value) {
+          _0x336ea5.push(41);
+        }
+        if (this.settings.Gold.value) {
+          _0x336ea5.push(42);
+        }
+        if (this.settings.Diamond.value) {
+          _0x336ea5.push(45);
+        }
+        if (this.settings.Moonstone.value) {
+          _0x336ea5.push(465);
+        }
+        if (this.settings.Emerald.value) {
+          _0x336ea5.push(44);
+        }
+        if (this.settings.Lapis.value) {
+          _0x336ea5.push(43);
+        }
+        this._scanChunks(_0x336ea5, (_0x12dfc4, _0x178d82, _0x236cfe, _0x6f9d2f, _0x8f35fc) => {
+          const _0x5df218 = this._createESPBox("oreESP", [_0x178d82, _0x236cfe, _0x6f9d2f], this._mats[_0x12dfc4]);
+          if (_0x5df218) {
+            if (!this._meshes[_0x8f35fc]) {
+              this._meshes[_0x8f35fc] = [];
+            }
+            this._meshes[_0x8f35fc].push(_0x5df218);
+          }
+        }, 32);
+      }
+    });
+    _0xaa4c31.modules["HUD Editor"] = new _0x14b9fa("HUD Editor", "HUD", {
+      type: "action",
+      overlayEl: null,
+      dragElements: [],
+      activeDrag: null,
+      offsetX: 0,
+      offsetY: 0,
+      onEnable: function () {
+        if (!this.overlayEl) {
+          this.overlayEl = document.createElement("div");
+          this.overlayEl.style.cssText = "position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:10002;display:none;align-items:center;justify-content:center;flex-direction:column;color:white;font-size:30px;font-family:var(--font-main);pointer-events:auto;backdrop-filter:blur(3px);";
+          this.overlayEl.innerHTML = "<div style=\"font-weight:bold;margin-bottom:10px;\">HUD Editor</div><div style=\"font-size:14px;color:#ccc;\">Drag HUD elements to reposition. Right-click anywhere to save and close.</div>";
+          _0x4f9147.shadowRoot.appendChild(this.overlayEl);
+          this.overlayEl.addEventListener("contextmenu", _0x3e85f5 => {
+            _0x3e85f5.preventDefault();
+            this.closeEditor();
+          });
+        }
+        this.overlayEl.style.display = "flex";
+        this.dragElements = [];
+        [_0x4f9147.hudInfo, _0x4f9147.keystrokes, _0x4f9147.arrayList].forEach(_0x19d4ba => {
+          if (_0x19d4ba) {
+            _0x19d4ba.style.border = "2px dashed #2ed573";
+            _0x19d4ba.style.pointerEvents = "auto";
+            _0x19d4ba.style.cursor = "move";
+            _0x19d4ba.dataset.origZ = _0x19d4ba.style.zIndex || "9998";
+            _0x19d4ba.style.zIndex = "10005";
+            const _0xe833bd = _0x250a63 => {
+              this.activeDrag = _0x19d4ba;
+              const _0x5f3e57 = _0x19d4ba.getBoundingClientRect();
+              this.offsetX = _0x250a63.clientX - _0x5f3e57.left;
+              this.offsetY = _0x250a63.clientY - _0x5f3e57.top;
+              _0x250a63.stopPropagation();
+            };
+            _0x19d4ba._hudEditPd = _0xe833bd;
+            _0x19d4ba.addEventListener("pointerdown", _0xe833bd);
+            this.dragElements.push(_0x19d4ba);
+          }
+        });
+        this._mm = _0xaaf106 => {
+          if (this.activeDrag) {
+            this.activeDrag.style.left = _0xaaf106.clientX - this.offsetX + "px";
+            this.activeDrag.style.top = _0xaaf106.clientY - this.offsetY + "px";
+            this.activeDrag.style.right = "auto";
+            this.activeDrag.style.bottom = "auto";
+            this.activeDrag.style.transform = "none";
+          }
+        };
+        this._mu = () => {
+          this.activeDrag = null;
+        };
+        window.addEventListener("pointermove", this._mm);
+        window.addEventListener("pointerup", this._mu);
+      },
+      closeEditor: function () {
+        if (this.overlayEl) {
+          this.overlayEl.style.display = "none";
+        }
+        this.dragElements.forEach(_0x115402 => {
+          _0x115402.style.border = "";
+          _0x115402.style.pointerEvents = "none";
+          _0x115402.style.cursor = "default";
+          _0x115402.style.zIndex = _0x115402.dataset.origZ;
+          if (_0x115402._hudEditPd) {
+            _0x115402.removeEventListener("pointerdown", _0x115402._hudEditPd);
+            delete _0x115402._hudEditPd;
+          }
+        });
+        if (this._mm) {
+          window.removeEventListener("pointermove", this._mm);
+        }
+        if (this._mu) {
+          window.removeEventListener("pointerup", this._mu);
+        }
+      },
+      onDisable: function () {}
+    });
+    _0xaa4c31.modules.Blur = new _0x14b9fa("Blur", "HUD", {
+      enabled: true
+    });
+    _0xaa4c31.modules.Watermark = new _0x14b9fa("Watermark", "HUD", {
+      enabled: true,
+      onEnable: () => {
+        if (_0x4f9147.watermark) {
+          _0x4f9147.watermark.style.display = "block";
+        }
+        if (_0x4f9147.categoriesContainer) {
+          _0x4f9147.categoriesContainer.style.display = "flex";
+        }
+      },
+      onDisable: () => {
+        if (_0x4f9147.watermark) {
+          _0x4f9147.watermark.style.display = "none";
+        }
+        if (_0x4f9147.categoriesContainer) {
+          _0x4f9147.categoriesContainer.style.display = "none";
+        }
+      }
+    });
+    _0xaa4c31.modules["Module List"] = new _0x14b9fa("Module List", "HUD", {
+      enabled: true,
+      onEnable: () => {
+        if (_0x4f9147.arrayList) {
+          _0x4f9147.arrayList.style.display = "flex";
+        }
+      },
+      onDisable: () => {
+        if (_0x4f9147.arrayList) {
+          _0x4f9147.arrayList.style.display = "none";
+        }
+      }
+    });
+    _0xaa4c31.modules["FPS/Ping"] = new _0x14b9fa("FPS/Ping", "HUD", {
+      enabled: false,
+      onEnable: () => {
+        if (_0x4f9147.hudInfo) {
+          _0x4f9147.hudInfo.style.display = "flex";
+        }
+      },
+      onDisable: () => {
+        if (_0x4f9147.hudInfo) {
+          _0x4f9147.hudInfo.style.display = "none";
+        }
+      },
+      onTick: function () {
+        if (!_0x4f9147.hudInfo) {
+          return;
+        }
+        let _0x3d49eb = 0;
+        const _0x1a87b9 = _0xe6c69a(Object.keys(_0xe6c69a.m).find(_0x1fc980 => _0xe6c69a.m[_0x1fc980].toString().includes("colyseusPingInfo")));
+        const _0x2fca0a = Object.values(_0x1a87b9).find(_0x258512 => _0x258512?.colyseusPingInfo);
+        if (_0x2fca0a && _0x2fca0a.colyseusPingInfo.end && _0x2fca0a.colyseusPingInfo.start) {
+          _0x3d49eb = Math.round((_0x2fca0a.colyseusPingInfo.end - _0x2fca0a.colyseusPingInfo.start) * 10) / 10;
+        }
+        _0x4f9147.shadowRoot.getElementById("bone-fps").textContent = "FPS: " + _0x417b07.currentFps;
+        _0x4f9147.shadowRoot.getElementById("bone-ping").textContent = "Ping: " + _0x3d49eb + "ms";
+      }
+    });
+    _0xaa4c31.modules.Keystrokes = new _0x14b9fa("Keystrokes", "HUD", {
+      enabled: false,
+      onEnable: () => {
+        if (_0x4f9147.keystrokes) {
+          _0x4f9147.keystrokes.style.display = "flex";
+        }
+      },
+      onDisable: () => {
+        if (_0x4f9147.keystrokes) {
+          _0x4f9147.keystrokes.style.display = "none";
+        }
+      },
+      onTick: function () {
+        if (!_0x4f9147.keystrokes) {
+          return;
+        }
+        const _0x2cb7c0 = Date.now();
+        _0x417b07.lClicks = _0x417b07.lClicks.filter(_0x4bbefd => _0x2cb7c0 - _0x4bbefd < 1000);
+        _0x417b07.rClicks = _0x417b07.rClicks.filter(_0x574918 => _0x2cb7c0 - _0x574918 < 1000);
+        _0x4f9147.shadowRoot.getElementById("cps-lmb").textContent = _0x417b07.lClicks.length + " CPS";
+        _0x4f9147.shadowRoot.getElementById("cps-rmb").textContent = _0x417b07.rClicks.length + " CPS";
+      }
+    });
+    _0xaa4c31.modules.Theme = new _0x14b9fa("Theme", "Visuals", {
+      settings: {
+        Hue: {
+          type: "slider",
+          min: 0,
+          max: 360,
+          step: 1,
+          value: 0,
+          onChange: function (_0x580adf) {
+            const _0x3672f2 = _0xaa4c31.modules.Theme;
+            if (_0x3672f2.enabled) {
+              _0x3672f2.applyColor(_0x580adf);
+            }
+          }
+        }
+      },
+      _defaultRGB: [255, 105, 180],
+      hslToRgb: function (_0x1519b8, _0xcaed5b, _0x1eafc9) {
+        let _0x224d25;
+        let _0x29d78f;
+        let _0x3b5102;
+        if (_0xcaed5b === 0) {
+          _0x224d25 = _0x29d78f = _0x3b5102 = _0x1eafc9;
+        } else {
+          const _0x42db27 = (_0x4b9a1a, _0x1f7e26, _0x3203ca) => {
+            if (_0x3203ca < 0) {
+              _0x3203ca += 1;
+            }
+            if (_0x3203ca > 1) {
+              _0x3203ca -= 1;
+            }
+            if (_0x3203ca < 1 / 6) {
+              return _0x4b9a1a + (_0x1f7e26 - _0x4b9a1a) * 6 * _0x3203ca;
+            }
+            if (_0x3203ca < 1 / 2) {
+              return _0x1f7e26;
+            }
+            if (_0x3203ca < 2 / 3) {
+              return _0x4b9a1a + (_0x1f7e26 - _0x4b9a1a) * (2 / 3 - _0x3203ca) * 6;
+            }
+            return _0x4b9a1a;
+          };
+          const _0x48ed2a = _0x1eafc9 < 0.5 ? _0x1eafc9 * (1 + _0xcaed5b) : _0x1eafc9 + _0xcaed5b - _0x1eafc9 * _0xcaed5b;
+          const _0x3826d9 = _0x1eafc9 * 2 - _0x48ed2a;
+          _0x224d25 = _0x42db27(_0x3826d9, _0x48ed2a, _0x1519b8 + 1 / 3);
+          _0x29d78f = _0x42db27(_0x3826d9, _0x48ed2a, _0x1519b8);
+          _0x3b5102 = _0x42db27(_0x3826d9, _0x48ed2a, _0x1519b8 - 1 / 3);
+        }
+        return [_0x224d25, _0x29d78f, _0x3b5102];
+      },
+      applyColor: function (_0x3e0a87) {
+        const [_0x2898a6, _0x1b7ce1, _0x5c6205] = this.hslToRgb(_0x3e0a87 / 360, 0.6, 0.5);
+        const _0x26e9f4 = [Math.round(_0x2898a6 * 255), Math.round(_0x1b7ce1 * 255), Math.round(_0x5c6205 * 255)];
+        _0x4f9147.applyTheme(_0x26e9f4);
+      },
+      onEnable: function () {
+        const _0x310c77 = this.settings.Hue.value;
+        this.applyColor(_0x310c77);
+        _0x4f9147.notify("Theme enabled ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ slide Hue to change color", "#00ff88");
+      },
+      onDisable: function () {
+        _0x4f9147.applyTheme(this._defaultRGB);
+        _0x4f9147.notify("Theme disabled ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ back to blue", "#ff4757");
+      }
+    });
   }
-
   function _0x32ba6e() {
     _0x417b07.fpsCount++;
     const _0x74b4de = performance.now();
@@ -2847,26 +4233,29 @@
   _0x4f9147.init();
   _0x14f286();
   requestAnimationFrame(_0x32ba6e);
+  // Adapter bridge for the replacement UI. Existing module implementations are unchanged.
   window.__anishaModules = _0xaa4c31.modules;
   window.__anishaState = _0x17466b;
   window.__anishaLegacyUI = _0x4f9147;
+
 })();
 
-// ---- V2 UI (angepasst: Logo C, Credits, etc.) ----
+
 (function () {
   "use strict";
   if (!window.__anishaModules || document.getElementById("anisha-client-v2")) return;
 
   const modules = window.__anishaModules;
   const state = window.__anishaState || {};
-  const LOGO_SVG = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#ff1493" stroke="#ff69b4" stroke-width="2"/><text x="50" y="68" font-family="Arial" font-size="52" font-weight="bold" fill="white" text-anchor="middle">C</text></svg>')}`;
+  const LOGO_SVG = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#9149db" stroke="#b96aff" stroke-width="2"/><text x="50" y="68" font-family="Arial" font-size="52" font-weight="bold" fill="white" text-anchor="middle">C</text></svg>')}`;
   const legacy = window.__anishaLegacyUI;
+  const uiScript = document.currentScript;
   const root = document.createElement("div");
   root.id = "anisha-client-v2";
   root.innerHTML = `
 <style>
 #anisha-client-v2 *{box-sizing:border-box;font-family:Arial,sans-serif}
-.ac2-credits{padding:18px;color:#aaa;font-size:12px;line-height:1.7}.ac2-credits-title{font-size:16px;font-weight:900;color:#eee;margin-bottom:12px}.ac2-credits a{color:#ff69b4;text-decoration:none}.ac2-credits a:hover{color:#fff;text-decoration:underline}.ac2-heart{color:#ec4899}.ac2-credits-divider{height:1px;background:#25252e;margin:14px 0}.ac2-credits-server{margin-top:16px;color:#777}
+.ac2-credits{padding:18px;color:#aaa;font-size:12px;line-height:1.7}.ac2-credits-title{font-size:16px;font-weight:900;color:#eee;margin-bottom:12px}.ac2-credits a{color:#cf8cff;text-decoration:none}.ac2-credits a:hover{color:#fff;text-decoration:underline}.ac2-heart{color:#ec4899}.ac2-credits-divider{height:1px;background:#25252e;margin:14px 0}.ac2-credits-server{margin-top:16px;color:#777}
 #anisha-client-v2{
     position:fixed;
     inset:0;
@@ -2874,9 +4263,9 @@
     color:#eee;
     pointer-events:none
 }
-.ac2-auth-logo{display:block;width:70px;height:70px;margin:0 auto 10px;border-radius:50%;object-fit:cover;border:2px solid #ff1493;box-shadow:0 0 22px rgba(255,20,147,.45)}
+.ac2-auth-logo{display:block;width:70px;height:70px;margin:0 auto 10px;border-radius:50%;object-fit:cover;border:2px solid #ec4899;box-shadow:0 0 22px rgba(236,72,153,.45)}
 .ac2-brand-row{display:flex;align-items:center;gap:7px}
-.ac2-brand-logo{width:28px;height:28px;border-radius:50%;object-fit:cover;border:1px solid #ff1493;box-shadow:0 0 10px rgba(255,20,147,.35)}
+.ac2-brand-logo{width:28px;height:28px;border-radius:50%;object-fit:cover;border:1px solid #ec4899;box-shadow:0 0 10px rgba(236,72,153,.35)}
 .ac2-auth{
     pointer-events:auto;
     position:absolute;
@@ -2886,14 +4275,15 @@
     width:330px;
     padding:22px;
     background:
-        radial-gradient(circle at 80% 0%,rgba(255,20,147,.18),transparent 40%),
+        radial-gradient(circle at 80% 0%,rgba(176,82,255,.18),transparent 40%),
         #0b0b10;
     border:1px solid #30263a;
     border-radius:12px;
-    box-shadow:0 30px 120px #000,0 0 60px rgba(255,20,147,.08);
-    display:none;
+    box-shadow:0 30px 120px #000,0 0 60px rgba(150,60,255,.08);
+    display:none; /* Login ausgeblendet – wir zeigen direkt das Hauptfenster */
 }
-.ac2-logo{text-align:center;font-size:22px;font-weight:900;letter-spacing:2px;color:#ff1493}
+.ac2-logo{text-align:center;font-size:22px;font-weight:900;letter-spacing:2px}
+.ac2-logo span{color:#b96aff}
 .ac2-sub{text-align:center;color:#666675;font-size:9px;margin:6px 0 16px;letter-spacing:1px}
 .ac2-input{
     width:100%;
@@ -2905,13 +4295,13 @@
     border-radius:5px;
     outline:none
 }
-.ac2-input:focus{border-color:#ff1493}
+.ac2-input:focus{border-color:#9b53d1}
 .ac2-enter{
     width:100%;
     padding:9px;
     border:0;
     border-radius:5px;
-    background:linear-gradient(90deg,#ff1493,#ff69b4);
+    background:linear-gradient(90deg,#7b3fb3,#b35cff);
     color:#fff;
     font-weight:800;
     cursor:pointer
@@ -2928,7 +4318,7 @@
     height:460px;
     overflow:hidden;
     background:
-        radial-gradient(circle at 90% 0%,rgba(255,20,147,.12),transparent 30%),
+        radial-gradient(circle at 90% 0%,rgba(177,75,255,.12),transparent 30%),
         #0b0b10;
     border:1px solid #292932;
     border-radius:10px;
@@ -2949,7 +4339,7 @@
     font-size:13px;
     letter-spacing:1.5px
 }
-.ac2-brand span{color:#ff1493}
+.ac2-brand span{color:#b96aff}
 .ac2-version{color:#4c4c57;font-size:8px;margin-top:5px;letter-spacing:2px}
 .ac2-nav{flex:1}
 .ac2-cat{
@@ -2966,9 +4356,9 @@
 }
 .ac2-cat:hover{background:#13131a;color:#ddd}
 .ac2-cat.active{
-    color:#ff69b4;
-    background:linear-gradient(90deg,rgba(255,20,147,.2),transparent);
-    border-left-color:#ff1493
+    color:#cf8cff;
+    background:linear-gradient(90deg,rgba(174,86,255,.2),transparent);
+    border-left-color:#ad5fff
 }
 .ac2-user{
     padding:13px 7px 4px;
@@ -2989,7 +4379,7 @@
     border-radius:6px;
     object-fit:cover;
     background:#18181e;
-    box-shadow:0 0 16px rgba(255,20,147,.22)
+    box-shadow:0 0 16px rgba(173,84,255,.22)
 }
 .ac2-username{font-size:11px;font-weight:900}
 .ac2-role{
@@ -3059,7 +4449,7 @@
     cursor:pointer;
     font-size:15px
 }
-.ac2-gear:hover{color:#ff69b4;transform:rotate(25deg)}
+.ac2-gear:hover{color:#ca83ff;transform:rotate(25deg)}
 .ac2-bottom{
     display:flex;
     justify-content:space-between;
@@ -3077,7 +4467,7 @@
     text-align:center;
     cursor:pointer
 }
-.ac2-bind:hover{color:#ff69b4;border-color:#ff1493}
+.ac2-bind:hover{color:#d09aff;border-color:#70458c}
 .ac2-toggle{
     width:32px;
     height:17px;
@@ -3095,7 +4485,7 @@
     background:#777;
     transition:.15s
 }
-.ac2-toggle.on{background:#ff1493;box-shadow:0 0 13px rgba(255,20,147,.35)}
+.ac2-toggle.on{background:#9149db;box-shadow:0 0 13px rgba(145,73,219,.35)}
 .ac2-toggle.on:after{margin-left:18px;background:#fff}
 .ac2-settings{
     position:absolute;
@@ -3105,7 +4495,7 @@
     padding:12px;
     background:#0b0b10
 }
-.ac2-settings.demo{display:block}
+.ac2-settings.demo{display:block} /* zum Anzeigen der Settings (Demo) */
 .ac2-settings-head{
     display:flex;
     justify-content:space-between;
@@ -3138,7 +4528,7 @@
     background:#09090e;
     border:1px solid #292932;
     border-radius:3px;
-    color:#ff69b4;
+    color:#ca94ff;
     outline:none
 }
 .ac2-check{
@@ -3158,7 +4548,7 @@
     background:#777;
     transition:.15s
 }
-.ac2-check.on{background:#ff1493}
+.ac2-check.on{background:#9149db}
 .ac2-check.on:after{margin-left:18px;background:#fff}
 .ac2-array{
     position:absolute;
@@ -3201,12 +4591,12 @@
     letter-spacing:.4px;
     cursor:pointer
 }
-.ac2-account:hover{background:#45203d;border-color:#ff1493;color:#fff}
+.ac2-account:hover{background:#45203d;border-color:#ec4899;color:#fff}
 .ac2-inject{
     padding:8px 11px;
     border:1px solid #8a3b69;
     border-radius:4px;
-    background:linear-gradient(90deg,#be185d,#ff1493);
+    background:linear-gradient(90deg,#be185d,#ec4899);
     color:#fff;
     font-size:9px;
     font-weight:900;
@@ -3218,7 +4608,7 @@
 .ac2-inject-status{display:inline-flex;align-items:center;gap:4px;color:#c084a8;font-size:8px;font-weight:900;letter-spacing:.5px;white-space:nowrap}
 .ac2-inject-status i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#fb7185;box-shadow:0 0 7px rgba(251,113,133,.45)}
 .ac2-inject-status.ready{color:#f0b6d2}
-.ac2-inject-status.ready i{background:#ff1493;box-shadow:0 0 7px rgba(255,20,147,.65)}
+.ac2-inject-status.ready i{background:#f472b6;box-shadow:0 0 7px rgba(244,114,182,.65)}
 .ac2-config{display:none}
 .ac2-config-card{
     padding:12px;
@@ -3250,8 +4640,9 @@
 }
 </style>
 
+<!-- Login ausgeblendet (display:none) -->
 <div class="ac2-auth">
-    <img class="ac2-auth-logo" src="${LOGO_SVG}" alt="CoreX V1 logo">
+    <img class="ac2-auth-logo" src="\${LOGO_SVG}" alt="CoreX V1 logo">
     <div class="ac2-logo">COREX V1</div>
     <div class="ac2-sub">COREX V1</div>
     <input class="ac2-input" placeholder="Username" value="DemoUser">
@@ -3259,12 +4650,13 @@
     <button class="ac2-enter">ENTER CLIENT</button>
 </div>
 
+<!-- Hauptfenster (sichtbar) -->
 <div class="ac2-window">
     <div class="ac2-close">×</div>
     <aside class="ac2-sidebar">
         <div class="ac2-brand">
             <div class="ac2-brand-row">
-                <img class="ac2-brand-logo" src="${LOGO_SVG}" alt="">
+                <img class="ac2-brand-logo" src="\${LOGO_SVG}" alt="">
                 <span>COREX V1</span>
             </div>
             <div class="ac2-version">COREX V1</div>
@@ -3297,13 +4689,86 @@
                 <span class="ac2-inject-status ready"><i></i> READY</span>
             </div>
         </div>
-        <div class="ac2-grid"></div>
+        <div class="ac2-grid">
+            <!-- Kill Aura -->
+            <div class="ac2-card">
+                <div class="ac2-cardtop">
+                    <div>
+                        <div class="ac2-name">Kill Aura</div>
+                        <div class="ac2-mode">Premium</div>
+                    </div>
+                    <div class="ac2-gear">⚙</div>
+                </div>
+                <div class="ac2-bottom">
+                    <div class="ac2-bind">[ NONE ]</div>
+                    <div class="ac2-toggle on"></div>
+                </div>
+            </div>
+            <!-- Aimbot -->
+            <div class="ac2-card">
+                <div class="ac2-cardtop">
+                    <div>
+                        <div class="ac2-name">Aimbot</div>
+                        <div class="ac2-mode">Premium</div>
+                    </div>
+                    <div class="ac2-gear">⚙</div>
+                </div>
+                <div class="ac2-bottom">
+                    <div class="ac2-bind">[ R ]</div>
+                    <div class="ac2-toggle"></div>
+                </div>
+            </div>
+            <!-- Left Clicker -->
+            <div class="ac2-card">
+                <div class="ac2-cardtop">
+                    <div>
+                        <div class="ac2-name">Left Clicker</div>
+                        <div class="ac2-mode">Premium</div>
+                    </div>
+                    <div class="ac2-gear">⚙</div>
+                </div>
+                <div class="ac2-bottom">
+                    <div class="ac2-bind">[ NONE ]</div>
+                    <div class="ac2-toggle"></div>
+                </div>
+            </div>
+            <!-- Right Clicker -->
+            <div class="ac2-card">
+                <div class="ac2-cardtop">
+                    <div>
+                        <div class="ac2-name">Right Clicker</div>
+                        <div class="ac2-mode">Premium</div>
+                    </div>
+                    <div class="ac2-gear">⚙</div>
+                </div>
+                <div class="ac2-bottom">
+                    <div class="ac2-bind">[ NONE ]</div>
+                    <div class="ac2-toggle"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Config-Bereich (versteckt) -->
         <div class="ac2-config" style="display:none;">
-            <div class="ac2-config-card"><div class="ac2-config-title">Save current configuration</div><button class="ac2-config-btn">SAVE</button></div>
-            <div class="ac2-config-card"><div class="ac2-config-title">Load saved configuration</div><button class="ac2-config-btn">LOAD</button></div>
-            <div class="ac2-config-card"><div class="ac2-config-title">Reset module states</div><button class="ac2-config-btn">RESET</button></div>
-            <div class="ac2-config-card"><div class="ac2-config-title">Export configuration</div><button class="ac2-config-btn">EXPORT</button></div>
-            <div class="ac2-config-card"><div class="ac2-config-title">Import configuration</div><button class="ac2-config-btn">IMPORT</button></div>
+            <div class="ac2-config-card">
+                <div class="ac2-config-title">Save current configuration</div>
+                <button class="ac2-config-btn">SAVE</button>
+            </div>
+            <div class="ac2-config-card">
+                <div class="ac2-config-title">Load saved configuration</div>
+                <button class="ac2-config-btn">LOAD</button>
+            </div>
+            <div class="ac2-config-card">
+                <div class="ac2-config-title">Reset module states</div>
+                <button class="ac2-config-btn">RESET</button>
+            </div>
+            <div class="ac2-config-card">
+                <div class="ac2-config-title">Export configuration</div>
+                <button class="ac2-config-btn">EXPORT</button>
+            </div>
+            <div class="ac2-config-card">
+                <div class="ac2-config-title">Import configuration</div>
+                <button class="ac2-config-btn">IMPORT</button>
+            </div>
         </div>
         <section class="ac2-credits" style="display:none;">
             <div class="ac2-credits-title">Credits</div>
@@ -3313,17 +4778,41 @@
             <p class="ac2-credits-server">Join the <a href="https://discord.gg/kBThnmUP2M" target="_blank" rel="noopener">Discord server</a> for client updates, community and hacks.</p>
         </section>
     </main>
-    <div class="ac2-settings">
+    <!-- Settings-Overlay (Demo) -->
+    <div class="ac2-settings demo">
         <div class="ac2-settings-head">
-            <div class="ac2-settings-title">Settings</div>
+            <div class="ac2-settings-title">Kill Aura Settings</div>
             <button class="ac2-back">← BACK</button>
         </div>
-        <div class="ac2-settings-list"></div>
+        <div class="ac2-settings-list">
+            <div class="ac2-setting">
+                <div class="ac2-setting-name">Delay</div>
+                <input class="ac2-setting-input" value="50">
+            </div>
+            <div class="ac2-setting">
+                <div class="ac2-setting-name">Range</div>
+                <input class="ac2-setting-input" value="6.8">
+            </div>
+            <div class="ac2-setting">
+                <div class="ac2-setting-name">Pull Mode</div>
+                <div class="ac2-check"></div>
+            </div>
+            <div class="ac2-setting">
+                <div class="ac2-setting-name">Swing</div>
+                <div class="ac2-check on"></div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="ac2-array"></div>
+<!-- Aktive Module -->
+<div class="ac2-array">
+    <div class="ac2-arrayitem" style="--h:45;">Kill Aura <span class="ac2-arraymode">Premium</span></div>
+    <div class="ac2-arrayitem" style="--h:230;">BHOP <span class="ac2-arraymode">Premium</span></div>
+    <div class="ac2-arrayitem" style="--h:120;">Scaffold <span class="ac2-arraymode">Premium</span></div>
+</div>
 `;
+  root.innerHTML = root.innerHTML.replaceAll("${LOGO_SVG}", LOGO_SVG);
   document.body.appendChild(root);
 
   if (legacy && legacy.shadowHost) legacy.shadowHost.style.display = "none";
@@ -3343,7 +4832,8 @@
 
   const categories = ["Combat", "Movement", "World", "Visual", "Config", "Credits"];
   const categoryMap = { Visual: "Visuals" };
-  const allModules = () => Object.values(modules).filter(Boolean).filter(m => !["Website", "Discord"].includes(m.name));
+  const hiddenModules = new Set(["Website", "Discord", "Loot Chests", "Theme"]);
+  const allModules = () => Object.values(modules).filter(Boolean).filter(m => !hiddenModules.has(m.name));
   const moduleCategory = m => m.category === "Visuals" ? "Visual" : m.category;
   const esc = value => String(value ?? "").replace(/[&<>\"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 
@@ -3402,7 +4892,8 @@
   function openSettings(module) {
     settingsTitle.textContent = `${module.name} Settings`;
     settingsList.innerHTML = "";
-    Object.entries(module.settings || {}).forEach(([name, setting]) => renderSetting(settingsList, name, setting));
+    const settingOrder = module.name === "ESP" ? ["Snapline", "Box", "Name", "Health", "Distance", "Max Range", "Rainbow", "Black", "Color", "Width"] : Object.keys(module.settings || {});
+    settingOrder.filter(name => module.settings?.[name]).forEach(name => renderSetting(settingsList, name, module.settings[name]));
     settings.classList.add("demo");
     settings.dataset.module = module.name;
   }
@@ -3416,7 +4907,18 @@
   function render() {
     const requestedCategory = categoryMap[activeCategory] || activeCategory;
     const query = (search.value || "").trim().toLowerCase();
-    const list = allModules().filter(m => m.category === requestedCategory && (!query || m.name.toLowerCase().includes(query)));
+    const sortOrders = {
+      Combat: ["Auto Trigger", "Aimbot", "Magic Bullet", "Kill Aura", "Trap Aura", "Auto Drink"],
+      Movement: ["Auto Sprint", "Bhop", "No Slow", "Glider Boost", "Scaffold", "Ground Builder"],
+      World: ["Inventory Manager", "OreESP", "Bed Aura", "Fast Break", "Fast Place", "Item Range", "New Account"],
+      Visual: ["ESP", "Tracer Lines", "Nametag Display", "Player Coordinates", "Target HUD", "No FOV", "X-Ray", "Night Mode", "Animation", "Item Spin", "Derp"]
+    };
+    const order = sortOrders[activeCategory] || [];
+    const list = allModules().filter(m => m.category === requestedCategory && (!query || m.name.toLowerCase().includes(query))).sort((a, b) => {
+      const ai = order.indexOf(a.name), bi = order.indexOf(b.name);
+      if (ai !== -1 || bi !== -1) return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+      return a.name.localeCompare(b.name);
+    });
     title.innerHTML = `${esc(activeCategory)} <span class="ac2-count">${list.length} MODULES</span>`;
     grid.innerHTML = "";
     if (!list.length) { grid.innerHTML = `<div class="ac2-card"><div class="ac2-mode">No modules in this category.</div></div>`; return; }
@@ -3425,7 +4927,7 @@
       const top = document.createElement("div"); top.className = "ac2-cardtop";
       const text = document.createElement("div"); text.innerHTML = `<div class="ac2-name">${esc(module.name)}</div><div class="ac2-mode">${esc(description(module))}</div>`;
       const gear = document.createElement("div"); gear.className = "ac2-gear"; gear.textContent = "⚙";
-      gear.style.visibility = module.settings && Object.keys(module.settings).length > 0 ? "visible" : "hidden";
+      gear.style.visibility = module.settings && Object.keys(module.settings).length ? "visible" : "hidden";
       gear.addEventListener("click", e => { e.stopPropagation(); openSettings(module); });
       top.append(text, gear);
       const bottom = document.createElement("div"); bottom.className = "ac2-bottom";
@@ -3434,7 +4936,7 @@
       const toggle = document.createElement("div"); toggle.className = "ac2-toggle" + (module.enabled ? " on" : "");
       toggle.addEventListener("click", e => { e.stopPropagation(); toggleModule(module); });
       bottom.append(bind, toggle); card.append(top, bottom);
-      card.addEventListener("click", () => module.settings && Object.keys(module.settings).length > 0 ? openSettings(module) : toggleModule(module));
+      card.addEventListener("click", () => module.settings ? openSettings(module) : toggleModule(module));
       card.addEventListener("contextmenu", e => { e.preventDefault(); bindingModule = module; });
       grid.appendChild(card);
     });
@@ -3458,50 +4960,33 @@
   root.querySelector(".ac2-back").addEventListener("click", () => settings.classList.remove("demo"));
   root.querySelector(".ac2-close").addEventListener("click", () => { win.style.display = "none"; });
   root.querySelector(".ac2-account").addEventListener("click", () => modules["New Account"]?.onEnable?.());
-
-  injectButton.addEventListener("click", () => {
-    if (window.__injectAnisha) {
-      const success = window.__injectAnisha();
-      if (success) {
-        Object.values(modules).forEach(m => {
-          if (m.enabled && m.onEnable) m.onEnable();
-        });
-      }
-    }
-    updateStatus();
-    render();
-    updateArray();
-  });
-
+  injectButton.addEventListener("click", () => { updateStatus(); render(); });
   root.querySelectorAll(".ac2-config-btn").forEach(button => button.addEventListener("click", () => {
     const action = button.textContent.trim();
     if (action === "RESET") allModules().forEach(m => { if (m.enabled) m.toggle(); });
-    if (action === "SAVE") localStorage.setItem("corex-config", JSON.stringify(allModules().map(m => ({name:m.name,enabled:m.enabled}))));
-    if (action === "LOAD") { try { JSON.parse(localStorage.getItem("corex-config") || "[]").forEach(s => { const m=modules[s.name]; if(m && !!s.enabled !== m.enabled) m.toggle(); }); } catch {} }
+    if (action === "SAVE") localStorage.setItem("anisha-client-config", JSON.stringify(allModules().map(m => ({name:m.name,enabled:m.enabled}))));
+    if (action === "LOAD") { try { JSON.parse(localStorage.getItem("anisha-client-config") || "[]").forEach(s => { const m=modules[s.name]; if(m && !!s.enabled !== m.enabled) m.toggle(); }); } catch {} }
     render(); updateArray();
   }));
 
-  root.querySelectorAll(".ac2-cat").forEach(button => {
-    if (!categories.includes(button.dataset.category || button.textContent.trim())) button.style.display = "none";
-  });
+  root.querySelectorAll(".ac2-cat").forEach(button => { if (!categories.includes(button.dataset.category || button.textContent.trim())) button.style.display = "none"; });
 
   window.addEventListener("keydown", e => {
     if (bindingModule) { e.preventDefault(); bindingModule.key = ["Escape","Delete"].includes(e.code) ? null : e.code; bindingModule = null; render(); return; }
     if (!e.repeat && e.code === "ShiftRight") { win.style.display = win.style.display === "none" ? "flex" : "none"; }
     allModules().forEach(m => { if (m.key === e.code) toggleModule(m); });
   }, true);
-  setInterval(() => { updateStatus(); updateArray(); }, 500);
+  updateStatus();
   updateStatus(); updateArray(); render();
 })();
 
-// ---- Persistenz und Chest Stealer (angepasst) ----
 (function () {
   "use strict";
   const registry = window.__anishaModules;
   const game = window.__anishaState || {};
-  if (!registry) return;
+  if (!registry || registry["Chest Stealer"]) return;
 
-  const STORAGE = "corex-state-v1";
+  const STORAGE = "anisha-client-state-v2";
   const modes = {
     "Kill Aura":"Packets", Aimbot:"Legit", "Auto Trigger":"Legit", "Magic Bullet":"Packets",
     "Auto Drink":"Vanilla", "Trap Aura":"Vanilla", Scaffold:"Vanilla", Bhop:"Vanilla",
@@ -3510,9 +4995,10 @@
     "No FOV":"Vanilla", "Player Coordinates":"Utility", "Night Mode":"Visual", Animation:"Vanilla",
     "Item Spin":"Vanilla", Derp:"Vanilla", "X-Ray":"Visual", "Target HUD":"Visual",
     "Item Range":"Vanilla", "Fast Place":"Packets", "Fast Break":"Packets", "Bed Aura":"Packets",
-    "Glider Boost":"Vanilla", "Inventory Manager":"Vanilla",
+    "Glider Boost":"Vanilla", "Loot Chests":"Vanilla", "Inventory Manager":"Vanilla",
     "New Account":"Utility", OreESP:"Visual", "HUD Editor":"Utility", Blur:"Visual",
-    Watermark:"Visual", "Module List":"Visual", "FPS/Ping":"Utility", Keystrokes:"Utility"
+    Watermark:"Visual", "Module List":"Visual", "FPS/Ping":"Utility", Keystrokes:"Utility",
+    Theme:"Visual"
   };
 
   function load() { try { return JSON.parse(localStorage.getItem(STORAGE) || "{}"); } catch { return {}; } }
@@ -3530,8 +5016,8 @@
   }
   function installPersistence() {
     Object.values(registry).filter(Boolean).forEach(m => {
-      if (m.__corexPersisted) return;
-      m.__corexPersisted = true;
+      if (m.__anishaPersisted) return;
+      m.__anishaPersisted = true;
       const oldToggle = typeof m.toggle === "function" ? m.toggle.bind(m) : null;
       if (oldToggle) m.toggle = function (...args) { const result = oldToggle(...args); save(); return result; };
       Object.values(m.settings || {}).forEach(s => {
@@ -3603,7 +5089,7 @@
     onDisable() { if (this._raf) cancelAnimationFrame(this._raf); this._raf = null; this.swapOps = null; },
     toggle() { this.enabled = !this.enabled; if (this.enabled) this.onEnable(); else this.onDisable(); save(); }
   };
-  if (!registry["Chest Stealer"]) registry["Chest Stealer"] = chestStealer;
+  registry["Chest Stealer"] = chestStealer;
 
   installPersistence();
   const desired = load();
@@ -3637,20 +5123,20 @@
   setInterval(() => { restore(); renderStableArray(); }, 250);
 })();
 
-// ---- Export/Import ----
+/* Persist the replacement UI's configuration buttons using the same store. */
 (function () {
-  const key = "corex-state-v1";
+  const key = "anisha-client-state-v2";
   document.addEventListener("click", e => {
     const button = e.target.closest?.(".ac2-config-btn");
     if (!button || !window.__anishaModules) return;
     if (button.textContent.trim() === "EXPORT") {
       const blob = new Blob([localStorage.getItem(key) || "{}"], {type:"application/json"});
-      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "corex-config.json"; a.click();
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "anisha-config.json"; a.click();
     }
   });
 })();
 
-// ---- Stil für Array-Liste ----
+/* Keep the small Arraylist mode text visually consistent with the new UI. */
 (function () {
   const style = document.createElement("style");
   style.textContent = ".ac2-arraymode{margin-left:5px;opacity:.62;font-size:8px;font-weight:400;letter-spacing:.3px}.ac2-arrayitem{font-family:Arial,sans-serif}";
